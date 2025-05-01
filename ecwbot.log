@@ -1,0 +1,96 @@
+2025-05-01 14:26:34,969 INFO     __main__: Инициализация TelegramClient...
+2025-05-01 14:26:37,497 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
+2025-05-01 14:26:37,498 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
+2025-05-01 14:26:37,498 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
+2025-05-01 14:26:45,033 INFO     __main__: Получена команда /start от 469165312
+2025-05-01 14:26:52,150 INFO     __main__: Получена команда /scan от 469165312
+2025-05-01 14:26:52,454 INFO     __main__: scan_twitter вернул 0 записей
+2025-05-01 14:26:52,454 INFO     __main__: После скоринга осталось 0 перспективных аккаунтов
+2025-05-01 14:28:15,506 INFO     __main__: Инициализация TelegramClient...
+2025-05-01 14:28:15,930 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
+2025-05-01 14:28:15,930 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
+2025-05-01 14:28:15,930 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
+2025-05-01 14:28:25,541 INFO     __main__: Получена команда /start от 469165312
+2025-05-01 14:28:27,499 INFO     __main__: Получена команда /scan от 469165312
+2025-05-01 14:28:27,654 INFO     twitter_scanner: scan_twitter: Fetching Nitter search URL: https://nitter.net/search?f=live&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-28
+2025-05-01 14:28:27,884 INFO     twitter_scanner: scan_twitter: Found 0 timeline items, processing up to 100
+2025-05-01 14:28:27,885 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:28:27,886 INFO     __main__: scan_twitter вернул 0 записей
+2025-05-01 14:28:27,886 INFO     __main__: После скоринга осталось 0 перспективных аккаунтов
+2025-05-01 14:29:02,482 INFO     __main__: Инициализация TelegramClient...
+2025-05-01 14:29:03,008 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
+2025-05-01 14:29:03,008 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
+2025-05-01 14:29:03,009 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
+2025-05-01 14:29:10,431 INFO     __main__: Получена команда /start от 469165312
+2025-05-01 14:29:12,579 INFO     __main__: Получена команда /scan от 469165312
+2025-05-01 14:29:12,646 INFO     twitter_scanner: scan_twitter: Fetching Nitter search URL: https://nitter.net/search?f=live&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-01
+2025-05-01 14:29:12,909 ERROR    twitter_scanner: scan_twitter: Error fetching or parsing Nitter page
+Traceback (most recent call last):
+  File "/home/mvv/EarlyCryptoWatcherBot/twitter_scanner.py", line 32, in scan_twitter
+    resp.raise_for_status()
+  File "/home/mvv/EarlyCryptoWatcherBot/venv/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://nitter.net/search?f=live&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-01
+2025-05-01 14:29:12,912 INFO     __main__: scan_twitter вернул 0 записей
+2025-05-01 14:29:12,912 INFO     __main__: После скоринга осталось 0 перспективных аккаунтов
+2025-05-01 14:32:21,952 INFO     twitter_scanner: scan_twitter: Trying Nitter mirror: https://nitter.net/search?f=live&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-24
+2025-05-01 14:32:22,188 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.net
+2025-05-01 14:32:22,189 INFO     twitter_scanner: scan_twitter: Found 0 items, processing up to 5
+2025-05-01 14:32:22,189 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:35:16,787 INFO     twitter_scanner: scan_twitter: Trying Nitter mirror: https://nitter.net/search?f=live&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-01
+2025-05-01 14:35:17,101 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.net
+2025-05-01 14:35:17,102 INFO     twitter_scanner: scan_twitter: Found 0 items, processing up to 5
+2025-05-01 14:35:17,102 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:36:34,006 INFO     twitter_scanner: scan_twitter: Trying Nitter mirror: https://nitter.net/search?f=live&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-01
+2025-05-01 14:36:34,254 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.net
+2025-05-01 14:36:34,255 INFO     twitter_scanner: scan_twitter: Found 0 items, processing up to 5
+2025-05-01 14:36:34,255 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:37:30,731 INFO     twitter_scanner: scan_twitter: Trying Nitter mirror: https://nitter.net/search?f=live&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-01
+2025-05-01 14:37:30,954 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.net
+2025-05-01 14:37:30,954 INFO     twitter_scanner: scan_twitter: Found 0 items, processing up to 5
+2025-05-01 14:37:30,954 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:39:32,290 INFO     twitter_scanner: scan_twitter: Trying Nitter mirror: https://nitter.net/search?f=live&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-01
+2025-05-01 14:39:32,520 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.net
+2025-05-01 14:39:32,521 INFO     twitter_scanner: scan_twitter: Found 0 items, processing up to 5
+2025-05-01 14:39:32,521 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:42:18,564 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.net/search?f=tweets&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-01
+2025-05-01 14:42:18,793 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.net
+2025-05-01 14:42:18,793 INFO     twitter_scanner: scan_twitter: Found 0 items, processing up to 5
+2025-05-01 14:42:18,799 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:42:26,360 INFO     __main__: Инициализация TelegramClient...
+2025-05-01 14:42:26,786 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
+2025-05-01 14:42:26,787 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
+2025-05-01 14:42:26,787 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
+2025-05-01 14:42:33,552 INFO     __main__: Получена команда /scan от 469165312
+2025-05-01 14:42:33,669 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.net/search?f=tweets&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-28
+2025-05-01 14:42:33,890 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.net
+2025-05-01 14:42:33,891 INFO     twitter_scanner: scan_twitter: Found 0 items, processing up to 100
+2025-05-01 14:42:33,891 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:42:33,892 INFO     __main__: scan_twitter вернул 0 записей
+2025-05-01 14:42:33,893 INFO     __main__: После скоринга осталось 0 перспективных аккаунтов
+2025-05-01 14:43:23,574 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.net/search?f=tweets&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-24
+2025-05-01 14:43:23,816 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.net
+2025-05-01 14:43:23,817 INFO     twitter_scanner: scan_twitter: Found 0 items, processing up to 3
+2025-05-01 14:43:23,817 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:51:34,506 INFO     __main__: Инициализация TelegramClient...
+2025-05-01 14:51:35,395 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
+2025-05-01 14:51:35,395 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
+2025-05-01 14:51:35,395 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
+2025-05-01 14:51:43,059 INFO     __main__: Получена команда /scan от 469165312
+2025-05-01 14:51:43,141 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.net/search?f=tweets&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-28
+2025-05-01 14:51:43,392 WARNING  twitter_scanner: 429 Too Many Requests on https://nitter.net, skipping
+2025-05-01 14:51:43,393 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.snopyta.org/search?f=tweets&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-28
+2025-05-01 14:51:44,604 WARNING  twitter_scanner: Error fetching from https://nitter.snopyta.org: HTTPSConnectionPool(host='nitter.snopyta.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-28 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ff7eb156510>: Failed to resolve 'nitter.snopyta.org' ([Errno -2] Name or service not known)"))
+2025-05-01 14:51:45,604 INFO     twitter_scanner: scan_twitter: Trying mirror: https://ybin.me/search?f=tweets&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-28
+2025-05-01 14:51:46,765 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://ybin.me
+2025-05-01 14:51:46,766 INFO     twitter_scanner: scan_twitter: Found 0 items, processing up to 100
+2025-05-01 14:51:46,766 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-01 14:51:46,766 INFO     __main__: scan_twitter вернул 0 записей
+2025-05-01 14:51:46,767 INFO     __main__: После скоринга осталось 0 перспективных аккаунтов
+2025-05-01 15:30:27,486 INFO     __main__: Инициализация TelegramClient...
+2025-05-01 15:30:28,184 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
+2025-05-01 15:30:28,185 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
+2025-05-01 15:30:28,185 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
+2025-05-01 15:43:51,036 INFO     __main__: Получена команда /scan от 469165312
+2025-05-01 15:44:26,178 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.net/search?f=tweets&q=crypto%20OR%20web3%20OR%20blockchain%20since%3A2025-04-28
+2025-05-01 15:44:48,076 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.net

@@ -1,0 +1,5 @@
+telethon==1.40.0
+python-dotenv
+apscheduler
+# snscrape из GitHub, чтобы не было багов в PyPI-версии
+git+https://github.com/JustAnotherArchivist/snscrape.git@master#egg=snscrape

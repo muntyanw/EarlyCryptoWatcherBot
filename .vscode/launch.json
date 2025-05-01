@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Запуск бота",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/bot.py",
+        "console": "integratedTerminal",
+        "envFile": "${workspaceFolder}/.env",
+        "python": "${workspaceFolder}/venv/bin/python"
+      }
+    ]
+  }
+  
