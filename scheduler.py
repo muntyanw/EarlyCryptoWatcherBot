@@ -32,7 +32,7 @@ async def daily_task():
         else:
             texts = [
                 f"🔸 @{acc['username']} (Score: {score_account(acc)})\n"
-                f"{acc['profile_url']}\n{acc['bio']}"
+                #f"{acc['profile_url']}\n{acc['bio']}"
                 for acc in good
             ]
             text = '\n\n'.join(texts)[:4000]

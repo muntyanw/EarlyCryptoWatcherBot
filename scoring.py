@@ -1,13 +1,35 @@
+import os
 from datetime import datetime
+from utils import extract_urls
 
-FUNDS    = ['a16z', 'binance labs', 'paradigm']
-KEYWORDS = ['zealy', 'galxe', 'presale', 'whitelist']
+# Загружаем фильтры из ENV (с дефолтами)
+TWEETS_MAX   = int(os.getenv("FILTER_TWEETS_MAX"))
+KEYWORDS     = os.getenv("FILTER_KEYWORDS").lower().split(",")
+FUNDS        = os.getenv("FILTER_FUNDS").lower().split(",")
 
-def score_account(acc):
-    score = 0
-    age = (datetime.now() - acc['created']).days
-    if age <= 7:           score += 2
-    if acc['tweets_count'] <= 10: score += 1
-    if any(kw in acc['bio'].lower()    for kw in KEYWORDS): score += 2
-    if any(f  in acc['content'].lower() for f  in FUNDS):    score += 3
-    return score
+def score_account(tw):
+    
+    text_acc = (tw["bio"] + " " + tw["tweet_text"]).lower()
+    
+    urls = extract_urls(text_acc)
+    if len(urls) > 0:
+        tw["urls"] = urls
+        tw["score"] += 2
+        return
+
+    SCORE_PLATFORMS = os.getenv('SCORE_PLATFORMS', '').lower().split(',')
+    if any(val in text_acc for val in SCORE_PLATFORMS):
+        tw["score"] += 2
+        
+    SCORE_FAMOUS_INVESTORS = os.getenv('SCORE_FAMOUS_INVESTORS', '').lower().split(',')
+    if any(val in text_acc for val in SCORE_FAMOUS_INVESTORS):
+        tw["score"] += 3
+        
+    FILTER_KEYWORDS = os.getenv('FILTER_KEYWORDS', '').lower().split(',')
+    FILTER_FUNDS = os.getenv('FILTER_FUNDS', '').lower().split(',')
+    key_words = FILTER_KEYWORDS + FILTER_FUNDS
+    
+    if any(val in text_acc for val in key_words):
+        tw["score"] += 3
+
+    return tw
