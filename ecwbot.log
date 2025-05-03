@@ -1,511 +1,115 @@
-2025-05-03 14:17:34,606 INFO     __main__: Инициализация TelegramClient...
-2025-05-03 14:17:36,696 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
-2025-05-03 14:17:36,697 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
-2025-05-03 14:17:36,697 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
-2025-05-03 14:18:10,317 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 14:18:10,406 INFO     twitter_scanner: Проверка доступных зеркал Nitter...
-2025-05-03 14:18:11,486 INFO     twitter_scanner: Рабочее зеркало: https://nitter.privacydev.net
-2025-05-03 14:18:12,983 INFO     twitter_scanner: Рабочее зеркало: https://nitter.aishiteiru.moe
-2025-05-03 14:18:14,463 INFO     twitter_scanner: Рабочее зеркало: https://nitter.aosus.link
-2025-05-03 14:18:16,068 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.pussthecat.org: HTTPSConnectionPool(host='nitter.pussthecat.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9b098dce90>: Failed to resolve 'nitter.pussthecat.org' ([Errno -2] Name or service not known)"))
-2025-05-03 14:18:17,231 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.moomoo.me: HTTPSConnectionPool(host='nitter.moomoo.me', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 14:18:17,391 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.privacy.com.de: HTTPSConnectionPool(host='nitter.privacy.com.de', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1016)')))
-2025-05-03 14:18:18,031 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fdn.fr: HTTPSConnectionPool(host='nitter.fdn.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9b09a70e10>: Failed to resolve 'nitter.fdn.fr' ([Errno -2] Name or service not known)"))
-2025-05-03 14:18:19,202 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.1d4.us: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9b09b70190>: Failed to resolve 'nitter.1d4.us' ([Errno -5] No address associated with hostname)"))
-2025-05-03 14:18:20,155 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.10qt.net: HTTPSConnectionPool(host='nitter.10qt.net', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 14:18:21,470 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.ahwx.org: HTTPSConnectionPool(host='nitter.ahwx.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nitter.ahwx.org'. (_ssl.c:1016)")))
-2025-05-03 14:18:24,612 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.asmallr.tech: HTTPSConnectionPool(host='nitter.asmallr.tech', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9b0a4224d0>: Failed to resolve 'nitter.asmallr.tech' ([Errno -2] Name or service not known)"))
-2025-05-03 14:18:27,300 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.bierlefeld.com: HTTPSConnectionPool(host='nitter.bierlefeld.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 14:18:28,157 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.blahaj.land: HTTPSConnectionPool(host='nitter.blahaj.land', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 14:18:28,811 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.buntcomm.com: HTTPSConnectionPool(host='nitter.buntcomm.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 14:18:29,554 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.colibriste.org: HTTPSConnectionPool(host='nitter.colibriste.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
-2025-05-03 14:18:34,632 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.crabf.art: HTTPSConnectionPool(host='nitter.crabf.art', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f9b09cd7e50>, 'Connection to nitter.crabf.art timed out. (connect timeout=5)'))
-2025-05-03 14:18:40,480 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fullex.fr: HTTPSConnectionPool(host='nitter.fullex.fr', port=443): Read timed out. (read timeout=5)
-2025-05-03 14:18:45,652 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.gl-pillet.fr: HTTPSConnectionPool(host='nitter.gl-pillet.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9b09bcdc90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-2025-05-03 14:18:48,893 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.mint.lgbt: HTTPSConnectionPool(host='nitter.mint.lgbt', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9b09b502d0>: Failed to resolve 'nitter.mint.lgbt' ([Errno -2] Name or service not known)"))
-2025-05-03 14:18:50,123 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.my.id: HTTPSConnectionPool(host='nitter.my.id', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9b09bdf490>: Failed to resolve 'nitter.my.id' ([Errno -2] Name or service not known)"))
-2025-05-03 14:18:50,778 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.onion.love: HTTPSConnectionPool(host='nitter.onion.love', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9b0983de50>: Failed to resolve 'nitter.onion.love' ([Errno -2] Name or service not known)"))
-2025-05-03 14:18:51,424 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.plutonic.tk: HTTPSConnectionPool(host='nitter.plutonic.tk', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9b098dfd50>: Failed to resolve 'nitter.plutonic.tk' ([Errno -2] Name or service not known)"))
-2025-05-03 14:18:55,101 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:18:57,187 INFO     twitter_scanner: scan_twitter: Status code: 429
-2025-05-03 14:18:57,188 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:25:13 GMT', 'Content-Type': 'text/html;charset=utf-8', 'Content-Length': '4165', 'Connection': 'keep-alive'}
-2025-05-03 14:18:57,188 INFO     twitter_scanner: scan_twitter: Text length: 4165
-2025-05-03 14:18:57,189 WARNING  twitter_scanner: 429 Too Many Requests on https://nitter.privacydev.net, skipping
-2025-05-03 14:18:57,190 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:18:59,338 INFO     twitter_scanner: scan_twitter: Status code: 200
-2025-05-03 14:18:59,340 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:18:58 GMT', 'Content-Type': 'text/html;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Content-Security-Policy': "default-src 'none'; script-src 'self' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; media-src 'self' blob: video.twimg.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; connect-src 'self' https://*.twimg.com; manifest-src 'self'", 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-XSS-Protection': '1; mode=block', 'Content-Encoding': 'gzip'}
-2025-05-03 14:18:59,341 INFO     twitter_scanner: scan_twitter: Text length: 32495
-2025-05-03 14:18:59,570 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.aishiteiru.moe
-2025-05-03 14:18:59,638 INFO     twitter_scanner: scan_twitter: Found 8 items, processing up to 100
-2025-05-03 14:19:22,561 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/BlumTalk
-2025-05-03 14:19:23,507 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/BlumTalk
-2025-05-03 14:19:24,510 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/BlumTalk
-2025-05-03 14:19:25,876 INFO     twitter_scanner: fetch_profile_info: bio='DM for Business & Promotion “N...', created=2023-12-14 11:52:00, tweets_count=2613
-2025-05-03 14:19:46,355 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/arifull45770
-2025-05-03 14:19:47,107 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/arifull45770
-2025-05-03 14:19:48,109 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/arifull45770
-2025-05-03 14:19:49,804 INFO     twitter_scanner: fetch_profile_info: bio='DLREF8R9 l am arifull Islam . ...', created=2025-02-05 03:05:00, tweets_count=142
-2025-05-03 14:19:58,537 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Chain_Grid
-2025-05-03 14:19:59,460 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Chain_Grid
-2025-05-03 14:20:00,461 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Chain_Grid
-2025-05-03 14:20:02,298 INFO     twitter_scanner: fetch_profile_info: bio='ChainGrid: Empowering Decentra...', created=2024-02-22 14:03:00, tweets_count=206
-2025-05-03 14:20:13,463 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/NFronabs
-2025-05-03 14:20:14,234 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/NFronabs
-2025-05-03 14:20:15,237 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/NFronabs
-2025-05-03 14:20:17,021 INFO     twitter_scanner: fetch_profile_info: bio='crypto enthusiast
-🌙📶 
-💚 🪐...', created=2021-12-21 09:51:00, tweets_count=6108
-2025-05-03 14:20:25,547 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/BigDott_Sidra
-2025-05-03 14:20:26,274 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/BigDott_Sidra
-2025-05-03 14:20:27,275 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/BigDott_Sidra
-2025-05-03 14:20:28,983 INFO     twitter_scanner: fetch_profile_info: bio='Fan Account | Not Affiliated t...', created=2022-10-06 02:57:00, tweets_count=1348
-2025-05-03 14:20:34,000 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Moongate
-2025-05-03 14:20:35,000 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Moongate
-2025-05-03 14:20:36,005 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Moongate
-2025-05-03 14:20:37,918 INFO     twitter_scanner: fetch_profile_info: bio='Attention Asset Protocol for R...', created=2022-03-01 10:12:00, tweets_count=1510
-2025-05-03 14:20:48,215 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
-2025-05-03 14:21:22,886 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 14:21:22,973 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:21:23,923 INFO     twitter_scanner: scan_twitter: Status code: 429
-2025-05-03 14:21:23,924 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:27:41 GMT', 'Content-Type': 'text/html', 'Content-Length': '577', 'Connection': 'keep-alive'}
-2025-05-03 14:21:23,925 INFO     twitter_scanner: scan_twitter: Text length: 577
-2025-05-03 14:21:23,926 WARNING  twitter_scanner: 429 Too Many Requests on https://nitter.privacydev.net, skipping
-2025-05-03 14:21:23,926 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:21:25,874 INFO     twitter_scanner: scan_twitter: Status code: 200
-2025-05-03 14:21:25,878 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:21:24 GMT', 'Content-Type': 'text/html;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Content-Security-Policy': "default-src 'none'; script-src 'self' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; media-src 'self' blob: video.twimg.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; connect-src 'self' https://*.twimg.com; manifest-src 'self'", 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-XSS-Protection': '1; mode=block', 'Content-Encoding': 'gzip'}
-2025-05-03 14:21:25,880 INFO     twitter_scanner: scan_twitter: Text length: 32750
-2025-05-03 14:21:26,097 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.aishiteiru.moe
-2025-05-03 14:21:26,125 INFO     twitter_scanner: scan_twitter: Found 9 items, processing up to 100
-2025-05-03 14:21:31,139 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/SonicLabsTech
-2025-05-03 14:21:31,994 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/SonicLabsTech
-2025-05-03 14:21:32,997 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/SonicLabsTech
-2025-05-03 14:21:34,858 INFO     twitter_scanner: fetch_profile_info: bio='...', created=2024-11-11 10:29:00, tweets_count=668
-2025-05-03 14:21:51,446 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/MisterXXXCrypto
-2025-05-03 14:21:52,313 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/MisterXXXCrypto
-2025-05-03 14:21:53,316 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/MisterXXXCrypto
-2025-05-03 14:21:54,784 INFO     twitter_scanner: fetch_profile_info: bio='...', created=2024-07-01 19:30:00, tweets_count=5183
-2025-05-03 14:22:03,168 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Trumpcoinreal1
-2025-05-03 14:22:04,031 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Trumpcoinreal1
-2025-05-03 14:22:05,032 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Trumpcoinreal1
-2025-05-03 14:22:06,596 INFO     twitter_scanner: fetch_profile_info: bio='$TRUMP- On@solanalist on#Binan...', created=2023-02-21 11:06:00, tweets_count=718
-2025-05-03 14:22:29,433 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
-2025-05-03 14:22:48,337 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 14:22:48,403 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:22:49,303 INFO     twitter_scanner: scan_twitter: Status code: 429
-2025-05-03 14:22:49,304 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:29:05 GMT', 'Content-Type': 'text/html', 'Content-Length': '577', 'Connection': 'keep-alive'}
-2025-05-03 14:22:49,306 INFO     twitter_scanner: scan_twitter: Text length: 577
-2025-05-03 14:22:49,307 WARNING  twitter_scanner: 429 Too Many Requests on https://nitter.privacydev.net, skipping
-2025-05-03 14:22:49,308 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:22:51,660 INFO     twitter_scanner: scan_twitter: Status code: 200
-2025-05-03 14:22:51,663 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:22:49 GMT', 'Content-Type': 'text/html;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Content-Security-Policy': "default-src 'none'; script-src 'self' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; media-src 'self' blob: video.twimg.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; connect-src 'self' https://*.twimg.com; manifest-src 'self'", 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-XSS-Protection': '1; mode=block', 'Content-Encoding': 'gzip'}
-2025-05-03 14:22:51,665 INFO     twitter_scanner: scan_twitter: Text length: 32909
-2025-05-03 14:22:51,810 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.aishiteiru.moe
-2025-05-03 14:22:51,830 INFO     twitter_scanner: scan_twitter: Found 9 items, processing up to 100
-2025-05-03 14:22:55,462 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/sumangarain9734
-2025-05-03 14:22:56,287 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/sumangarain9734
-2025-05-03 14:22:57,290 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/sumangarain9734
-2025-05-03 14:22:59,010 INFO     twitter_scanner: fetch_profile_info: bio='...', created=2024-04-27 15:01:00, tweets_count=58
-2025-05-03 14:23:17,364 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
-2025-05-03 14:25:13,396 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 14:25:13,464 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:25:14,531 INFO     twitter_scanner: scan_twitter: Status code: 429
-2025-05-03 14:25:14,533 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:31:30 GMT', 'Content-Type': 'text/html', 'Content-Length': '577', 'Connection': 'keep-alive'}
-2025-05-03 14:25:14,533 INFO     twitter_scanner: scan_twitter: Text length: 577
-2025-05-03 14:25:14,535 WARNING  twitter_scanner: 429 Too Many Requests on https://nitter.privacydev.net, skipping
-2025-05-03 14:25:14,535 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:25:15,773 INFO     twitter_scanner: scan_twitter: Status code: 200
-2025-05-03 14:25:15,779 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:25:14 GMT', 'Content-Type': 'text/html;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Content-Security-Policy': "default-src 'none'; script-src 'self' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; media-src 'self' blob: video.twimg.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; connect-src 'self' https://*.twimg.com; manifest-src 'self'", 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-XSS-Protection': '1; mode=block', 'Content-Encoding': 'gzip'}
-2025-05-03 14:25:15,781 INFO     twitter_scanner: scan_twitter: Text length: 36604
-2025-05-03 14:25:16,054 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.aishiteiru.moe
-2025-05-03 14:25:16,071 INFO     twitter_scanner: scan_twitter: Found 9 items, processing up to 100
-2025-05-03 14:25:21,077 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Abrahamchase09
-2025-05-03 14:25:22,021 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Abrahamchase09
-2025-05-03 14:25:23,023 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Abrahamchase09
-2025-05-03 14:25:24,577 INFO     twitter_scanner: fetch_profile_info: bio='Sharing strategies on Airdrops...', created=2022-01-15 22:32:00, tweets_count=26303
-2025-05-03 14:25:59,101 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/agglayerzone
-2025-05-03 14:25:59,886 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/agglayerzone
-2025-05-03 14:26:00,888 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/agglayerzone
-2025-05-03 14:26:00,681 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.aishiteiru.moe: 429 Client Error: Too Many Requests for url: https://nitter.aishiteiru.moe/agglayerzone
-2025-05-03 14:26:01,684 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aosus.link/agglayerzone
-2025-05-03 14:26:12,152 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.aosus.link: HTTPSConnectionPool(host='nitter.aosus.link', port=443): Read timed out. (read timeout=10)
-2025-05-03 14:26:13,160 ERROR    twitter_scanner: fetch_profile_info: All mirrors failed
-2025-05-03 14:26:13,163 ERROR    twitter_scanner: scan_twitter: Error parsing item #4 - unsupported operand type(s) for -: 'datetime.datetime' and 'NoneType'
+2025-05-03 18:35:18,440 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.gl-pillet.fr: HTTPSConnectionPool(host='nitter.gl-pillet.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4f4c1f0310>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-05-03 18:35:21,857 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.mint.lgbt: HTTPSConnectionPool(host='nitter.mint.lgbt', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4f4c211910>: Failed to resolve 'nitter.mint.lgbt' ([Errno -2] Name or service not known)"))
+2025-05-03 18:35:24,155 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.my.id: HTTPSConnectionPool(host='nitter.my.id', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4f4c210950>: Failed to resolve 'nitter.my.id' ([Errno -2] Name or service not known)"))
+2025-05-03 18:35:24,966 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.onion.love: HTTPSConnectionPool(host='nitter.onion.love', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4f4c1fc610>: Failed to resolve 'nitter.onion.love' ([Errno -2] Name or service not known)"))
+2025-05-03 18:35:25,632 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.plutonic.tk: HTTPSConnectionPool(host='nitter.plutonic.tk', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4f4c2150d0>: Failed to resolve 'nitter.plutonic.tk' ([Errno -2] Name or service not known)"))
+2025-05-03 18:35:30,172 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net
+2025-05-03 18:35:30,173 INFO     twitter_scanner: Fetching: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
+2025-05-03 18:35:30,804 INFO     twitter_scanner: Status: 429, Length: 577
+2025-05-03 18:35:30,805 WARNING  twitter_scanner: Rate limited, skipping mirror
+2025-05-03 18:35:30,805 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe
+2025-05-03 18:35:30,805 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
+2025-05-03 18:35:31,809 INFO     twitter_scanner: Status: 200, Length: 42679
+2025-05-03 18:35:31,881 INFO     twitter_scanner: Success: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
+2025-05-03 18:35:31,903 INFO     twitter_scanner: tweet_date: May 1, 2025 · 4:54 AM UTC
+2025-05-03 18:35:36,926 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/MetawhaleGlobal
+2025-05-03 18:35:37,563 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/MetawhaleGlobal
+2025-05-03 18:35:38,566 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/MetawhaleGlobal
+2025-05-03 18:35:38,751 INFO     twitter_scanner: fetch_profile_info: bio='Welcome to Meta whale Family#A...', created=2023-01-13 08:33:00, tweets_count=12659
+2025-05-03 18:35:38,757 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:35:38,760 INFO     twitter_scanner: tweet_date: May 3, 2025 · 6:34 PM UTC
+2025-05-03 18:35:43,763 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/dimce_MKD
+2025-05-03 18:35:44,718 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/dimce_MKD
+2025-05-03 18:35:45,719 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/dimce_MKD
+2025-05-03 18:35:46,876 INFO     twitter_scanner: fetch_profile_info: bio='...', created=2015-02-15 23:34:00, tweets_count=818
+2025-05-03 18:35:46,879 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:35:46,882 INFO     twitter_scanner: tweet_date: May 3, 2025 · 6:34 PM UTC
+2025-05-03 18:35:51,889 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/cryptolive54m
+2025-05-03 18:35:52,757 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/cryptolive54m
+2025-05-03 18:35:53,760 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/cryptolive54m
+2025-05-03 18:35:55,069 INFO     twitter_scanner: fetch_profile_info: bio='🌐 Live Crypto News | 📈 Market ...', created=2025-03-21 16:35:00, tweets_count=314
+2025-05-03 18:35:55,072 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:35:55,074 INFO     twitter_scanner: tweet_date: May 3, 2025 · 6:34 PM UTC
+2025-05-03 18:36:00,077 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/iamberzio
+2025-05-03 18:36:01,251 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/iamberzio
+2025-05-03 18:36:02,256 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/iamberzio
+2025-05-03 18:36:03,803 INFO     twitter_scanner: fetch_profile_info: bio='Web 3 Researcher || Alpha Hunt...', created=2023-11-09 15:54:00, tweets_count=16512
+2025-05-03 18:36:03,807 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:36:03,812 INFO     twitter_scanner: tweet_date: May 3, 2025 · 5:40 AM UTC
+2025-05-03 18:36:08,816 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Crypto4bailout
+2025-05-03 18:36:08,219 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Crypto4bailout
+2025-05-03 18:36:09,219 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Crypto4bailout
+2025-05-03 18:36:10,723 INFO     twitter_scanner: fetch_profile_info: bio='Crypto is freedom.💪| From$0- 6...', created=2018-07-06 21:23:00, tweets_count=41222
+2025-05-03 18:36:10,730 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:36:10,733 INFO     twitter_scanner: tweet_date: May 3, 2025 · 6:34 PM UTC
+2025-05-03 18:36:15,736 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Panalsow
+2025-05-03 18:36:16,397 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Panalsow
+2025-05-03 18:36:17,403 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Panalsow
+2025-05-03 18:36:18,334 INFO     twitter_scanner: fetch_profile_info: bio='Crypto is boost...', created=2025-04-07 08:18:00, tweets_count=13
+2025-05-03 18:36:18,338 INFO     twitter_scanner: > FILTER_TWEETS_MAX - continue
+2025-05-03 18:36:18,340 INFO     twitter_scanner: tweet_date: May 3, 2025 · 6:33 PM UTC
+2025-05-03 18:36:23,342 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/OliviaRose300
+2025-05-03 18:36:24,132 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/OliviaRose300
+2025-05-03 18:36:25,134 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/OliviaRose300
+2025-05-03 18:36:26,615 INFO     twitter_scanner: fetch_profile_info: bio='Have Research On$SXCH$WSM$ZPAY...', created=2023-09-28 06:14:00, tweets_count=1199
+2025-05-03 18:36:26,618 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:36:26,619 INFO     twitter_scanner: tweet_date: Apr 23, 2025 · 1:02 PM UTC
+2025-05-03 18:36:26,620 INFO     twitter_scanner: age_tweet_days > FILTER_AGE_TWEET_DAYS_MAX - continue
+2025-05-03 18:36:26,621 INFO     twitter_scanner: tweet_date: May 3, 2025 · 1:08 PM UTC
+2025-05-03 18:36:31,624 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/AirdropNinjaPro
+2025-05-03 18:36:32,205 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/AirdropNinjaPro
+2025-05-03 18:36:33,218 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/AirdropNinjaPro
+2025-05-03 18:36:34,583 INFO     twitter_scanner: fetch_profile_info: bio='Contact our admins:t.me/CEOAir...', created=2021-06-14 16:30:00, tweets_count=929
+2025-05-03 18:36:34,589 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:36:34,591 INFO     twitter_scanner: tweet_date: Apr 30, 2025 · 1:04 PM UTC
+2025-05-03 18:36:39,595 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/AirdropHero69
+2025-05-03 18:36:40,398 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/AirdropHero69
+2025-05-03 18:36:39,863 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/AirdropHero69
+2025-05-03 18:36:41,083 INFO     twitter_scanner: fetch_profile_info: bio='Discover the best free and pre...', created=2018-10-18 01:37:00, tweets_count=55
+2025-05-03 18:36:41,087 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:36:41,090 INFO     twitter_scanner: tweet_date: May 3, 2025 · 9:22 AM UTC
+2025-05-03 18:36:46,096 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Captaindefii
+2025-05-03 18:36:47,288 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Captaindefii
+2025-05-03 18:36:48,291 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Captaindefii
+2025-05-03 18:36:50,477 INFO     twitter_scanner: fetch_profile_info: bio='I'm a highly skilled crypto co...', created=2020-04-24 18:30:00, tweets_count=176324
+2025-05-03 18:36:50,481 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:36:55,535 INFO     twitter_scanner: scan_twitter: go next cursor
+2025-05-03 18:36:55,536 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26&cursor=DAADDAABCgABGqC4YJ4W0CQKAAIaoLeCs9cBvAAIAAIAAAACCAADAAAAAAgABAAAAAAKAAUaoLhlpcAnEAoABhqguGWlv9jwAAA
+2025-05-03 18:36:57,620 INFO     twitter_scanner: Status: 200, Length: 29202
+2025-05-03 18:36:57,660 INFO     twitter_scanner: Success: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26&cursor=DAADDAABCgABGqC4YJ4W0CQKAAIaoLeCs9cBvAAIAAIAAAACCAADAAAAAAgABAAAAAAKAAUaoLhlpcAnEAoABhqguGWlv9jwAAA
+2025-05-03 18:36:57,670 INFO     twitter_scanner: username:  - continue
+2025-05-03 18:36:57,672 INFO     twitter_scanner: tweet_date: May 3, 2025 · 9:18 AM UTC
+2025-05-03 18:37:02,675 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/hanhdo_
+2025-05-03 18:37:03,504 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/hanhdo_
+2025-05-03 18:37:04,510 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/hanhdo_
+2025-05-03 18:37:06,243 INFO     twitter_scanner: fetch_profile_info: bio='Happiness in spreading values ...', created=2020-07-12 16:22:00, tweets_count=3734
+2025-05-03 18:37:06,246 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:37:06,249 INFO     twitter_scanner: tweet_date: May 3, 2025 · 5:30 AM UTC
+2025-05-03 18:37:09,710 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/duta_crypto
+2025-05-03 18:37:10,342 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/duta_crypto
+2025-05-03 18:37:11,343 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/duta_crypto
+2025-05-03 18:37:12,950 INFO     twitter_scanner: fetch_profile_info: bio='Owner Youtube Duta Crypto // A...', created=2021-04-10 07:32:00, tweets_count=5379
+2025-05-03 18:37:12,954 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:37:12,956 INFO     twitter_scanner: tweet_date: May 1, 2025 · 5:39 PM UTC
+2025-05-03 18:37:17,959 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Chain_Grid
+2025-05-03 18:37:18,669 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Chain_Grid
+2025-05-03 18:37:19,672 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Chain_Grid
+2025-05-03 18:37:20,956 INFO     twitter_scanner: fetch_profile_info: bio='ChainGrid: Empowering Decentra...', created=2024-02-22 14:03:00, tweets_count=206
+2025-05-03 18:37:20,963 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:37:20,967 INFO     twitter_scanner: tweet_date: Apr 23, 2025 · 1:02 PM UTC
+2025-05-03 18:37:20,968 INFO     twitter_scanner: age_tweet_days > FILTER_AGE_TWEET_DAYS_MAX - continue
+2025-05-03 18:37:20,970 INFO     twitter_scanner: tweet_date: May 2, 2025 · 10:05 AM UTC
+2025-05-03 18:37:25,993 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/BlumTalk
+2025-05-03 18:37:26,878 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/BlumTalk
+2025-05-03 18:37:27,894 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/BlumTalk
+2025-05-03 18:37:29,175 INFO     twitter_scanner: fetch_profile_info: bio='DM for Business & Promotion “N...', created=2023-12-14 11:52:00, tweets_count=2615
+2025-05-03 18:37:29,180 INFO     twitter_scanner: > FILTER_ACCOUNT_AGE_MAX_DAYS - continue
+2025-05-03 18:37:29,185 INFO     twitter_scanner: tweet_date: May 3, 2025 · 9:22 AM UTC
+2025-05-03 18:37:29,188 INFO     twitter_scanner: fault user in BD: {'username': 'Captaindefii', 'bio': "I'm a highly skilled crypto content creator. Having worked with top-tier projects (Kaiser,@Since_Networkamb)🐢 3PQbSds9msUwwhDxTbDLxuVMrvdBLR7gzdh -$Waves", 'created': datetime.datetime(2020, 4, 24, 18, 30), 'followers_count': 7971, 'tweets_count': 176324}
+2025-05-03 18:37:29,196 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+2025-05-03 18:37:29,200 ERROR    twitter_scanner: Ошибка при /scan:
 Traceback (most recent call last):
-  File "/home/mvv/EarlyCryptoWatcherBot/twitter_scanner.py", line 285, in scan_twitter
-    age_days = (datetime.now() - tw["created"]).days
-                ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
-TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'NoneType'
-2025-05-03 14:26:23,194 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
-2025-05-03 14:36:28,031 INFO     __main__: Инициализация TelegramClient...
-2025-05-03 14:36:28,773 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
-2025-05-03 14:36:28,777 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
-2025-05-03 14:36:28,778 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
-2025-05-03 14:36:35,639 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 14:36:35,714 INFO     twitter_scanner: Проверка доступных зеркал Nitter...
-2025-05-03 14:36:37,763 INFO     twitter_scanner: Рабочее зеркало: https://nitter.privacydev.net
-2025-05-03 14:36:39,020 INFO     twitter_scanner: Рабочее зеркало: https://nitter.aishiteiru.moe
-2025-05-03 14:36:40,478 INFO     twitter_scanner: Рабочее зеркало: https://nitter.aosus.link
-2025-05-03 14:36:41,984 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.pussthecat.org: HTTPSConnectionPool(host='nitter.pussthecat.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d6c3a6e50>: Failed to resolve 'nitter.pussthecat.org' ([Errno -2] Name or service not known)"))
-2025-05-03 14:36:43,364 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.moomoo.me: HTTPSConnectionPool(host='nitter.moomoo.me', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 14:36:44,803 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.privacy.com.de: HTTPSConnectionPool(host='nitter.privacy.com.de', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1016)')))
-2025-05-03 14:36:45,399 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fdn.fr: HTTPSConnectionPool(host='nitter.fdn.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d6c39e810>: Failed to resolve 'nitter.fdn.fr' ([Errno -2] Name or service not known)"))
-2025-05-03 14:36:46,053 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.1d4.us: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d6c3c15d0>: Failed to resolve 'nitter.1d4.us' ([Errno -5] No address associated with hostname)"))
-2025-05-03 14:36:46,941 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.10qt.net: HTTPSConnectionPool(host='nitter.10qt.net', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 14:36:48,224 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.ahwx.org: HTTPSConnectionPool(host='nitter.ahwx.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nitter.ahwx.org'. (_ssl.c:1016)")))
-2025-05-03 14:36:49,760 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.asmallr.tech: HTTPSConnectionPool(host='nitter.asmallr.tech', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d6c3c1690>: Failed to resolve 'nitter.asmallr.tech' ([Errno -2] Name or service not known)"))
-2025-05-03 14:36:55,328 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.batsense.net: HTTPSConnectionPool(host='nitter.batsense.net', port=443): Read timed out. (read timeout=5)
-2025-05-03 14:36:56,614 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.bierlefeld.com: HTTPSConnectionPool(host='nitter.bierlefeld.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 14:36:57,992 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.blahaj.land: HTTPSConnectionPool(host='nitter.blahaj.land', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 14:36:58,806 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.buntcomm.com: HTTPSConnectionPool(host='nitter.buntcomm.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 14:36:59,472 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.colibriste.org: HTTPSConnectionPool(host='nitter.colibriste.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
-2025-05-03 14:37:04,551 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.crabf.art: HTTPSConnectionPool(host='nitter.crabf.art', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f4d6c3c8390>, 'Connection to nitter.crabf.art timed out. (connect timeout=5)'))
-2025-05-03 14:37:10,650 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fullex.fr: HTTPSConnectionPool(host='nitter.fullex.fr', port=443): Read timed out. (read timeout=5)
-2025-05-03 14:37:15,741 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.gl-pillet.fr: HTTPSConnectionPool(host='nitter.gl-pillet.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4d6c3c11d0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-2025-05-03 14:37:19,209 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.mint.lgbt: HTTPSConnectionPool(host='nitter.mint.lgbt', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d6c3de010>: Failed to resolve 'nitter.mint.lgbt' ([Errno -2] Name or service not known)"))
-2025-05-03 14:37:20,969 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.my.id: HTTPSConnectionPool(host='nitter.my.id', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d6c3c3550>: Failed to resolve 'nitter.my.id' ([Errno -2] Name or service not known)"))
-2025-05-03 14:37:21,799 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.onion.love: HTTPSConnectionPool(host='nitter.onion.love', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d6c388f10>: Failed to resolve 'nitter.onion.love' ([Errno -2] Name or service not known)"))
-2025-05-03 14:37:22,487 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.plutonic.tk: HTTPSConnectionPool(host='nitter.plutonic.tk', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f4d6c3c8f10>: Failed to resolve 'nitter.plutonic.tk' ([Errno -2] Name or service not known)"))
-2025-05-03 14:37:26,970 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:37:27,905 INFO     twitter_scanner: scan_twitter: Status code: 429
-2025-05-03 14:37:27,906 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:43:44 GMT', 'Content-Type': 'text/html', 'Content-Length': '577', 'Connection': 'keep-alive'}
-2025-05-03 14:37:27,907 INFO     twitter_scanner: scan_twitter: Text length: 577
-2025-05-03 14:37:27,909 WARNING  twitter_scanner: 429 Too Many Requests on https://nitter.privacydev.net, skipping
-2025-05-03 14:37:27,910 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 14:37:28,997 INFO     twitter_scanner: scan_twitter: Status code: 200
-2025-05-03 14:37:29,001 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 14:37:28 GMT', 'Content-Type': 'text/html;charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Content-Security-Policy': "default-src 'none'; script-src 'self' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; media-src 'self' blob: video.twimg.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; connect-src 'self' https://*.twimg.com; manifest-src 'self'", 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-XSS-Protection': '1; mode=block', 'Content-Encoding': 'gzip'}
-2025-05-03 14:37:29,002 INFO     twitter_scanner: scan_twitter: Text length: 26800
-2025-05-03 14:37:29,151 INFO     twitter_scanner: scan_twitter: Successfully fetched from https://nitter.aishiteiru.moe
-2025-05-03 14:37:29,164 INFO     twitter_scanner: scan_twitter: Found 5 items, processing up to 100
-2025-05-03 14:37:34,180 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Zayed_Alhemairy
-2025-05-03 14:37:35,132 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Zayed_Alhemairy
-2025-05-03 14:37:36,136 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Zayed_Alhemairy
-2025-05-03 14:37:38,372 INFO     twitter_scanner: fetch_profile_info: bio='📌 Crypto investor since 2016📌 ...', created=2012-04-10 21:51:00, tweets_count=5176
-2025-05-03 14:38:04,687 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/web3_365
-2025-05-03 14:38:05,502 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/web3_365
-2025-05-03 14:38:06,504 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/web3_365
-2025-05-03 14:38:08,194 INFO     twitter_scanner: fetch_profile_info: bio='...', created=2023-04-06 14:30:00, tweets_count=46
-2025-05-03 14:38:17,868 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Chain_Grid
-2025-05-03 14:38:18,701 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Chain_Grid
-2025-05-03 14:38:19,702 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Chain_Grid
-2025-05-03 14:38:21,136 INFO     twitter_scanner: fetch_profile_info: bio='ChainGrid: Empowering Decentra...', created=2024-02-22 14:03:00, tweets_count=206
-2025-05-03 14:38:22,994 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
-2025-05-03 15:01:36,700 INFO     __main__: Инициализация TelegramClient...
-2025-05-03 15:01:37,287 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
-2025-05-03 15:01:37,291 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
-2025-05-03 15:01:37,292 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
-2025-05-03 15:02:05,859 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 15:02:06,018 INFO     twitter_scanner: Проверка доступных зеркал Nitter...
-2025-05-03 15:02:07,296 INFO     twitter_scanner: Рабочее зеркало: https://nitter.privacydev.net
-2025-05-03 15:02:08,485 INFO     twitter_scanner: Рабочее зеркало: https://nitter.aishiteiru.moe
-2025-05-03 15:02:11,946 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.pussthecat.org: HTTPSConnectionPool(host='nitter.pussthecat.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ff5083ccb10>: Failed to resolve 'nitter.pussthecat.org' ([Errno -2] Name or service not known)"))
-2025-05-03 15:02:13,316 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.moomoo.me: HTTPSConnectionPool(host='nitter.moomoo.me', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:02:15,365 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.privacy.com.de: HTTPSConnectionPool(host='nitter.privacy.com.de', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1016)')))
-2025-05-03 15:02:16,659 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fdn.fr: HTTPSConnectionPool(host='nitter.fdn.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ff508397e50>: Failed to resolve 'nitter.fdn.fr' ([Errno -2] Name or service not known)"))
-2025-05-03 15:02:17,307 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.1d4.us: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ff5083e8cd0>: Failed to resolve 'nitter.1d4.us' ([Errno -5] No address associated with hostname)"))
-2025-05-03 15:02:18,273 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.10qt.net: HTTPSConnectionPool(host='nitter.10qt.net', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:02:19,646 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.ahwx.org: HTTPSConnectionPool(host='nitter.ahwx.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nitter.ahwx.org'. (_ssl.c:1016)")))
-2025-05-03 15:02:24,703 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.asmallr.tech: HTTPSConnectionPool(host='nitter.asmallr.tech', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ff5083eb890>: Failed to resolve 'nitter.asmallr.tech' ([Errno -2] Name or service not known)"))
-2025-05-03 15:02:30,791 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.bierlefeld.com: HTTPSConnectionPool(host='nitter.bierlefeld.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:02:30,309 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.blahaj.land: HTTPSConnectionPool(host='nitter.blahaj.land', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:02:31,026 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.buntcomm.com: HTTPSConnectionPool(host='nitter.buntcomm.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:02:31,822 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.colibriste.org: HTTPSConnectionPool(host='nitter.colibriste.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
-2025-05-03 15:02:36,903 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.crabf.art: HTTPSConnectionPool(host='nitter.crabf.art', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7ff5083f4490>, 'Connection to nitter.crabf.art timed out. (connect timeout=5)'))
-2025-05-03 15:02:43,585 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fullex.fr: HTTPSConnectionPool(host='nitter.fullex.fr', port=443): Read timed out. (read timeout=5)
-2025-05-03 15:02:49,636 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.gl-pillet.fr: HTTPSConnectionPool(host='nitter.gl-pillet.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ff5083e9ad0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-2025-05-03 15:02:53,785 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.mint.lgbt: HTTPSConnectionPool(host='nitter.mint.lgbt', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ff5083cfb90>: Failed to resolve 'nitter.mint.lgbt' ([Errno -2] Name or service not known)"))
-2025-05-03 15:02:57,127 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.my.id: HTTPSConnectionPool(host='nitter.my.id', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ff5083e9410>: Failed to resolve 'nitter.my.id' ([Errno -2] Name or service not known)"))
-2025-05-03 15:02:58,312 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.onion.love: HTTPSConnectionPool(host='nitter.onion.love', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ff5083f7fd0>: Failed to resolve 'nitter.onion.love' ([Errno -2] Name or service not known)"))
-2025-05-03 15:02:59,493 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.plutonic.tk: HTTPSConnectionPool(host='nitter.plutonic.tk', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ff5083f4f50>: Failed to resolve 'nitter.plutonic.tk' ([Errno -2] Name or service not known)"))
-2025-05-03 15:04:52,093 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 15:04:53,068 INFO     twitter_scanner: scan_twitter: Status code: 429
-2025-05-03 15:04:53,069 INFO     twitter_scanner: scan_twitter: Headers: {'Server': 'nginx', 'Date': 'Sat, 03 May 2025 15:11:09 GMT', 'Content-Type': 'text/html', 'Content-Length': '577', 'Connection': 'keep-alive'}
-2025-05-03 15:04:53,070 INFO     twitter_scanner: scan_twitter: Text length: 577
-2025-05-03 15:04:53,070 WARNING  twitter_scanner: 429 Too Many Requests on https://nitter.privacydev.net, skipping
-2025-05-03 15:32:34,125 INFO     __main__: Инициализация TelegramClient...
-2025-05-03 15:32:34,616 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
-2025-05-03 15:32:34,623 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
-2025-05-03 15:32:34,624 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
-2025-05-03 15:32:43,849 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 15:32:43,927 INFO     twitter_scanner: Проверка доступных зеркал Nitter...
-2025-05-03 15:32:45,034 INFO     twitter_scanner: Рабочее зеркало: https://nitter.privacydev.net
-2025-05-03 15:32:47,814 INFO     twitter_scanner: Рабочее зеркало: https://nitter.aishiteiru.moe
-2025-05-03 15:32:51,906 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.pussthecat.org: HTTPSConnectionPool(host='nitter.pussthecat.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37f6575150>: Failed to resolve 'nitter.pussthecat.org' ([Errno -2] Name or service not known)"))
-2025-05-03 15:32:53,276 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.moomoo.me: HTTPSConnectionPool(host='nitter.moomoo.me', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:32:54,867 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.privacy.com.de: HTTPSConnectionPool(host='nitter.privacy.com.de', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1016)')))
-2025-05-03 15:32:55,536 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fdn.fr: HTTPSConnectionPool(host='nitter.fdn.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37f6580f50>: Failed to resolve 'nitter.fdn.fr' ([Errno -2] Name or service not known)"))
-2025-05-03 15:32:56,759 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.1d4.us: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37f6578ad0>: Failed to resolve 'nitter.1d4.us' ([Errno -5] No address associated with hostname)"))
-2025-05-03 15:32:57,699 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.10qt.net: HTTPSConnectionPool(host='nitter.10qt.net', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:32:58,923 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.ahwx.org: HTTPSConnectionPool(host='nitter.ahwx.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nitter.ahwx.org'. (_ssl.c:1016)")))
-2025-05-03 15:33:02,982 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.asmallr.tech: HTTPSConnectionPool(host='nitter.asmallr.tech', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37f6578a90>: Failed to resolve 'nitter.asmallr.tech' ([Errno -2] Name or service not known)"))
-2025-05-03 15:33:04,176 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.bierlefeld.com: HTTPSConnectionPool(host='nitter.bierlefeld.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:33:05,594 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.blahaj.land: HTTPSConnectionPool(host='nitter.blahaj.land', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:33:06,294 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.buntcomm.com: HTTPSConnectionPool(host='nitter.buntcomm.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:33:07,381 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.colibriste.org: HTTPSConnectionPool(host='nitter.colibriste.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
-2025-05-03 15:33:12,475 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.crabf.art: HTTPSConnectionPool(host='nitter.crabf.art', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f37f6597390>, 'Connection to nitter.crabf.art timed out. (connect timeout=5)'))
-2025-05-03 15:33:18,396 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fullex.fr: HTTPSConnectionPool(host='nitter.fullex.fr', port=443): Read timed out. (read timeout=5)
-2025-05-03 15:33:23,491 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.gl-pillet.fr: HTTPSConnectionPool(host='nitter.gl-pillet.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f37f6578610>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-2025-05-03 15:33:27,658 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.mint.lgbt: HTTPSConnectionPool(host='nitter.mint.lgbt', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37f6582010>: Failed to resolve 'nitter.mint.lgbt' ([Errno -2] Name or service not known)"))
-2025-05-03 15:33:30,350 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.my.id: HTTPSConnectionPool(host='nitter.my.id', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37f6596450>: Failed to resolve 'nitter.my.id' ([Errno -2] Name or service not known)"))
-2025-05-03 15:33:31,100 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.onion.love: HTTPSConnectionPool(host='nitter.onion.love', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37f6595010>: Failed to resolve 'nitter.onion.love' ([Errno -2] Name or service not known)"))
-2025-05-03 15:33:32,414 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.plutonic.tk: HTTPSConnectionPool(host='nitter.plutonic.tk', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37f657b690>: Failed to resolve 'nitter.plutonic.tk' ([Errno -2] Name or service not known)"))
-2025-05-03 15:33:34,777 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net
-2025-05-03 15:33:34,778 INFO     twitter_scanner: Fetching: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 15:33:35,767 INFO     twitter_scanner: Status: 429, Length: 4165
-2025-05-03 15:33:35,769 WARNING  twitter_scanner: Rate limited, skipping mirror
-2025-05-03 15:33:35,771 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe
-2025-05-03 15:33:35,773 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 15:33:36,814 INFO     twitter_scanner: Status: 200, Length: 24601
-2025-05-03 15:33:41,921 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/dilyarasimms
-2025-05-03 15:33:42,798 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/dilyarasimms
-2025-05-03 15:33:43,808 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/dilyarasimms
-2025-05-03 15:33:45,335 INFO     twitter_scanner: fetch_profile_info: bio='Life shrinks or expands in pro...', created=2016-01-07 11:52:00, tweets_count=40
-2025-05-03 15:33:50,355 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/LosKruptos
-2025-05-03 15:33:51,259 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/LosKruptos
-2025-05-03 15:33:52,262 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/LosKruptos
-2025-05-03 15:33:53,870 INFO     twitter_scanner: fetch_profile_info: bio='Los Hermanos Kruptos - Your fr...', created=2018-05-18 20:56:00, tweets_count=104971
-2025-05-03 15:33:58,877 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/kriptokurdu_eng
-2025-05-03 15:33:59,855 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/kriptokurdu_eng
-2025-05-03 15:34:00,857 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/kriptokurdu_eng
-2025-05-03 15:34:02,380 INFO     twitter_scanner: fetch_profile_info: bio='All posts are just personal in...', created=2023-04-15 19:10:00, tweets_count=1043
-2025-05-03 15:34:06,010 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Essramsmmg
-2025-05-03 15:34:07,111 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Essramsmmg
-2025-05-03 15:34:08,113 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Essramsmmg
-2025-05-03 15:34:09,422 INFO     twitter_scanner: fetch_profile_info: bio='...', created=2019-07-28 09:11:00, tweets_count=111
-2025-05-03 15:34:14,471 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26&cursor=DAADDAABCgABGqCOwl8W4e4KAAIaoI6QLleRlwAIAAIAAAACCAADAAAAAAgABAAAAAAKAAUaoI7DmcAnEAoABhqgjsOZv9jwAAA
-2025-05-03 15:34:15,552 INFO     twitter_scanner: Status: 200, Length: 23894
-2025-05-03 15:34:15,630 ERROR    twitter_scanner: Error parsing item: list index out of range
-Traceback (most recent call last):
-  File "/home/mvv/EarlyCryptoWatcherBot/twitter_scanner.py", line 246, in scan_twitter
-    cleaned = tw["tweet_date"].split('·')[0].strip() + ' ' + tw["tweet_date"].split('·')[1].replace('UTC', '').strip()
-                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
-IndexError: list index out of range
-2025-05-03 15:34:20,673 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Quad_Risky
-2025-05-03 15:34:21,576 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Quad_Risky
-2025-05-03 15:34:22,577 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Quad_Risky
-2025-05-03 15:34:24,639 INFO     twitter_scanner: fetch_profile_info: bio='Web3 Gamer||Alpha airdrop hunt...', created=2024-11-25 19:24:00, tweets_count=385
-2025-05-03 15:34:29,649 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/cryptofndy
-2025-05-03 15:34:30,662 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/cryptofndy
-2025-05-03 15:34:31,664 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/cryptofndy
-2025-05-03 15:34:33,219 INFO     twitter_scanner: fetch_profile_info: bio='CEO of Fndy Group and founder....', created=2024-03-07 04:34:00, tweets_count=3651
-2025-05-03 15:34:36,817 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/glamspaskingym
-2025-05-03 15:34:37,702 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/glamspaskingym
-2025-05-03 15:34:38,703 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/glamspaskingym
-2025-05-03 15:34:40,198 INFO     twitter_scanner: fetch_profile_info: bio='✨Advanced Skincare Treatments ...', created=2013-02-02 18:40:00, tweets_count=328
-2025-05-03 15:34:40,220 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
-2025-05-03 15:37:56,378 INFO     __main__: Инициализация TelegramClient...
-2025-05-03 15:37:57,233 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
-2025-05-03 15:37:57,237 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
-2025-05-03 15:37:57,238 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
-2025-05-03 15:38:02,782 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 15:38:02,855 INFO     twitter_scanner: Проверка доступных зеркал Nitter...
-2025-05-03 15:38:03,755 INFO     twitter_scanner: Рабочее зеркало: https://nitter.privacydev.net
-2025-05-03 15:38:04,932 INFO     twitter_scanner: Рабочее зеркало: https://nitter.aishiteiru.moe
-2025-05-03 15:38:06,826 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.pussthecat.org: HTTPSConnectionPool(host='nitter.pussthecat.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1691d59610>: Failed to resolve 'nitter.pussthecat.org' ([Errno -2] Name or service not known)"))
-2025-05-03 15:38:08,034 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.moomoo.me: HTTPSConnectionPool(host='nitter.moomoo.me', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:38:09,443 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.privacy.com.de: HTTPSConnectionPool(host='nitter.privacy.com.de', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1016)')))
-2025-05-03 15:38:09,503 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fdn.fr: HTTPSConnectionPool(host='nitter.fdn.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1691d59390>: Failed to resolve 'nitter.fdn.fr' ([Errno -2] Name or service not known)"))
-2025-05-03 15:38:10,667 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.1d4.us: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1691d7ca90>: Failed to resolve 'nitter.1d4.us' ([Errno -5] No address associated with hostname)"))
-2025-05-03 15:38:11,373 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.10qt.net: HTTPSConnectionPool(host='nitter.10qt.net', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:38:12,384 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.ahwx.org: HTTPSConnectionPool(host='nitter.ahwx.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nitter.ahwx.org'. (_ssl.c:1016)")))
-2025-05-03 15:38:13,314 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.asmallr.tech: HTTPSConnectionPool(host='nitter.asmallr.tech', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1691d7f690>: Failed to resolve 'nitter.asmallr.tech' ([Errno -2] Name or service not known)"))
-2025-05-03 15:38:18,699 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.batsense.net: HTTPSConnectionPool(host='nitter.batsense.net', port=443): Read timed out. (read timeout=5)
-2025-05-03 15:38:19,894 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.bierlefeld.com: HTTPSConnectionPool(host='nitter.bierlefeld.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:38:20,737 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.blahaj.land: HTTPSConnectionPool(host='nitter.blahaj.land', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:38:21,397 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.buntcomm.com: HTTPSConnectionPool(host='nitter.buntcomm.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:38:22,053 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.colibriste.org: HTTPSConnectionPool(host='nitter.colibriste.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
-2025-05-03 15:38:27,128 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.crabf.art: HTTPSConnectionPool(host='nitter.crabf.art', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f1691d84ad0>, 'Connection to nitter.crabf.art timed out. (connect timeout=5)'))
-2025-05-03 15:38:33,537 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.gl-pillet.fr: HTTPSConnectionPool(host='nitter.gl-pillet.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f1691d7d2d0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-2025-05-03 15:38:37,231 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.mint.lgbt: HTTPSConnectionPool(host='nitter.mint.lgbt', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1691d7fa90>: Failed to resolve 'nitter.mint.lgbt' ([Errno -2] Name or service not known)"))
-2025-05-03 15:38:38,423 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.my.id: HTTPSConnectionPool(host='nitter.my.id', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1691d61c10>: Failed to resolve 'nitter.my.id' ([Errno -2] Name or service not known)"))
-2025-05-03 15:38:38,524 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.onion.love: HTTPSConnectionPool(host='nitter.onion.love', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1691d5bb10>: Failed to resolve 'nitter.onion.love' ([Errno -2] Name or service not known)"))
-2025-05-03 15:38:38,575 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.plutonic.tk: HTTPSConnectionPool(host='nitter.plutonic.tk', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1691d7f990>: Failed to resolve 'nitter.plutonic.tk' ([Errno -2] Name or service not known)"))
-2025-05-03 15:38:42,568 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net
-2025-05-03 15:38:42,570 INFO     twitter_scanner: Fetching: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 15:38:43,465 INFO     twitter_scanner: Status: 429, Length: 577
-2025-05-03 15:38:43,468 WARNING  twitter_scanner: Rate limited, skipping mirror
-2025-05-03 15:38:43,470 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe
-2025-05-03 15:38:43,473 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 15:38:43,184 INFO     twitter_scanner: Status: 200, Length: 22617
-2025-05-03 15:38:48,357 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/duta_crypto
-2025-05-03 15:38:49,183 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/duta_crypto
-2025-05-03 15:38:50,184 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/duta_crypto
-2025-05-03 15:38:51,689 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.aishiteiru.moe: 429 Client Error: Too Many Requests for url: https://nitter.aishiteiru.moe/duta_crypto
-2025-05-03 15:38:52,691 ERROR    twitter_scanner: fetch_profile_info: All mirrors failed
-2025-05-03 15:38:57,709 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Essramsmmg
-2025-05-03 15:39:02,212 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Essramsmmg
-2025-05-03 15:39:03,216 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Essramsmmg
-2025-05-03 15:39:04,599 INFO     twitter_scanner: fetch_profile_info: bio='...', created=2019-07-28 09:11:00, tweets_count=111
-2025-05-03 15:39:09,629 INFO     twitter_scanner: scan_twitter: go next cursor
-2025-05-03 15:40:10,001 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26&cursor=DAADDAABCgABGqCP3ogbgd8KAAIaoI_GQhYRRAAIAAIAAAACCAADAAAAAAgABAAAAAAKAAUaoI_u5MAnEAoABhqgj-7kv9jwAAA
-2025-05-03 15:40:11,077 INFO     twitter_scanner: Status: 200, Length: 20092
-2025-05-03 15:40:11,187 ERROR    twitter_scanner: Error parsing item: list index out of range
-Traceback (most recent call last):
-  File "/home/mvv/EarlyCryptoWatcherBot/twitter_scanner.py", line 247, in scan_twitter
-    cleaned = tw["tweet_date"].split('·')[0].strip() + ' ' + tw["tweet_date"].split('·')[1].replace('UTC', '').strip()
-                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
-IndexError: list index out of range
-2025-05-03 15:40:16,201 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/MD_OVI_PRO
-2025-05-03 15:40:16,893 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/MD_OVI_PRO
-2025-05-03 15:40:16,487 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/MD_OVI_PRO
-2025-05-03 15:40:18,581 INFO     twitter_scanner: fetch_profile_info: bio='|| NFT 🥷 Mainnet ❇️ Crypto ♨️ ...', created=2024-12-31 00:52:00, tweets_count=3240
-2025-05-03 15:40:23,592 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/HolaItsAk47
-2025-05-03 15:40:24,385 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/HolaItsAk47
-2025-05-03 15:40:25,386 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/HolaItsAk47
-2025-05-03 15:43:19,638 INFO     __main__: Инициализация TelegramClient...
-2025-05-03 15:43:20,048 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
-2025-05-03 15:43:20,052 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
-2025-05-03 15:43:20,053 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
-2025-05-03 15:43:32,018 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 15:43:32,086 INFO     twitter_scanner: Проверка доступных зеркал Nitter...
-2025-05-03 15:43:33,256 INFO     twitter_scanner: Рабочее зеркало: https://nitter.privacydev.net
-2025-05-03 15:43:34,326 INFO     twitter_scanner: Рабочее зеркало: https://nitter.aishiteiru.moe
-2025-05-03 15:43:34,551 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.aosus.link: HTTPSConnectionPool(host='nitter.aosus.link', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb06868e810>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-2025-05-03 15:43:36,606 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.pussthecat.org: HTTPSConnectionPool(host='nitter.pussthecat.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb0686a9f90>: Failed to resolve 'nitter.pussthecat.org' ([Errno -2] Name or service not known)"))
-2025-05-03 15:43:37,866 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.moomoo.me: HTTPSConnectionPool(host='nitter.moomoo.me', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:43:39,176 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.privacy.com.de: HTTPSConnectionPool(host='nitter.privacy.com.de', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1016)')))
-2025-05-03 15:43:39,818 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fdn.fr: HTTPSConnectionPool(host='nitter.fdn.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb06868ef50>: Failed to resolve 'nitter.fdn.fr' ([Errno -2] Name or service not known)"))
-2025-05-03 15:43:40,978 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.1d4.us: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb0686c4b50>: Failed to resolve 'nitter.1d4.us' ([Errno -5] No address associated with hostname)"))
-2025-05-03 15:43:41,754 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.10qt.net: HTTPSConnectionPool(host='nitter.10qt.net', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:43:42,934 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.ahwx.org: HTTPSConnectionPool(host='nitter.ahwx.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nitter.ahwx.org'. (_ssl.c:1016)")))
-2025-05-03 15:43:46,217 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.asmallr.tech: HTTPSConnectionPool(host='nitter.asmallr.tech', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb0686c47d0>: Failed to resolve 'nitter.asmallr.tech' ([Errno -2] Name or service not known)"))
-2025-05-03 15:43:48,805 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.bierlefeld.com: HTTPSConnectionPool(host='nitter.bierlefeld.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:43:49,507 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.blahaj.land: HTTPSConnectionPool(host='nitter.blahaj.land', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:43:50,118 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.buntcomm.com: HTTPSConnectionPool(host='nitter.buntcomm.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:43:50,777 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.colibriste.org: HTTPSConnectionPool(host='nitter.colibriste.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
-2025-05-03 15:43:54,404 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.crabf.art: HTTPSConnectionPool(host='nitter.crabf.art', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fb068818110>, 'Connection to nitter.crabf.art timed out. (connect timeout=5)'))
-2025-05-03 15:44:02,815 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.gl-pillet.fr: HTTPSConnectionPool(host='nitter.gl-pillet.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb0686c7e10>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-2025-05-03 15:44:06,528 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.mint.lgbt: HTTPSConnectionPool(host='nitter.mint.lgbt', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb0686b5f10>: Failed to resolve 'nitter.mint.lgbt' ([Errno -2] Name or service not known)"))
-2025-05-03 15:44:10,439 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.my.id: HTTPSConnectionPool(host='nitter.my.id', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb0686e1610>: Failed to resolve 'nitter.my.id' ([Errno -2] Name or service not known)"))
-2025-05-03 15:44:11,070 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.onion.love: HTTPSConnectionPool(host='nitter.onion.love', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb0686e39d0>: Failed to resolve 'nitter.onion.love' ([Errno -2] Name or service not known)"))
-2025-05-03 15:44:11,698 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.plutonic.tk: HTTPSConnectionPool(host='nitter.plutonic.tk', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb0686c7d50>: Failed to resolve 'nitter.plutonic.tk' ([Errno -2] Name or service not known)"))
-2025-05-03 15:44:16,113 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net
-2025-05-03 15:44:16,115 INFO     twitter_scanner: Fetching: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 15:44:17,090 INFO     twitter_scanner: Status: 429, Length: 577
-2025-05-03 15:44:17,092 WARNING  twitter_scanner: Rate limited, skipping mirror
-2025-05-03 15:44:17,095 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe
-2025-05-03 15:44:17,097 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 15:44:18,410 INFO     twitter_scanner: Status: 200, Length: 33632
-2025-05-03 15:44:18,633 INFO     twitter_scanner: May 3, 2025 · 5:30 AM UTC
-2025-05-03 15:44:22,170 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/duta_crypto
-2025-05-03 15:44:24,048 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/duta_crypto
-2025-05-03 15:44:25,050 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/duta_crypto
-2025-05-03 15:44:26,891 INFO     twitter_scanner: fetch_profile_info: bio='Owner Youtube Duta Crypto // A...', created=2021-04-10 07:32:00, tweets_count=5379
-2025-05-03 15:44:26,896 INFO     twitter_scanner: Apr 23, 2025 · 1:02 PM UTC
-2025-05-03 15:44:26,899 INFO     twitter_scanner: May 2, 2025 · 7:01 PM UTC
-2025-05-03 15:44:31,902 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/beets_fi
-2025-05-03 15:44:32,959 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/beets_fi
-2025-05-03 15:44:33,960 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/beets_fi
-2025-05-03 15:44:35,691 INFO     twitter_scanner: fetch_profile_info: bio='Sonic's Flagship DEX and Liqui...', created=2021-09-04 11:42:00, tweets_count=5302
-2025-05-03 15:44:35,700 INFO     twitter_scanner: May 3, 2025 · 3:43 PM UTC
-2025-05-03 15:44:40,704 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Quad_Risky
-2025-05-03 15:44:41,677 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Quad_Risky
-2025-05-03 15:44:42,680 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Quad_Risky
-2025-05-03 15:44:44,452 INFO     twitter_scanner: fetch_profile_info: bio='Web3 Gamer||Alpha airdrop hunt...', created=2024-11-25 19:24:00, tweets_count=385
-2025-05-03 15:44:44,458 INFO     twitter_scanner: May 3, 2025 · 3:43 PM UTC
-2025-05-03 15:44:49,464 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/EmmanuelSSCB
-2025-05-03 15:44:52,384 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/EmmanuelSSCB
-2025-05-03 15:44:53,387 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/EmmanuelSSCB
-2025-05-03 15:44:53,986 INFO     twitter_scanner: fetch_profile_info: bio='Solitude. gnoma (🧙,🧙)....', created=2024-01-01 22:35:00, tweets_count=21238
-2025-05-03 15:44:53,991 INFO     twitter_scanner: May 1, 2025 · 5:39 PM UTC
-2025-05-03 15:44:58,995 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Chain_Grid
-2025-05-03 15:44:59,803 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Chain_Grid
-2025-05-03 15:45:00,804 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Chain_Grid
-2025-05-03 15:45:02,383 INFO     twitter_scanner: fetch_profile_info: bio='ChainGrid: Empowering Decentra...', created=2024-02-22 14:03:00, tweets_count=206
-2025-05-03 15:45:02,402 INFO     twitter_scanner: May 3, 2025 · 1:42 PM UTC
-2025-05-03 15:45:07,408 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Wagmi100xx
-2025-05-03 15:45:09,128 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Wagmi100xx
-2025-05-03 15:45:10,132 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Wagmi100xx
-2025-05-03 15:45:11,692 INFO     twitter_scanner: fetch_profile_info: bio='Moon bag shills || The reply g...', created=2021-06-08 13:37:00, tweets_count=32797
-2025-05-03 15:45:11,698 INFO     twitter_scanner: May 2, 2025 · 2:23 PM UTC
-2025-05-03 15:45:16,702 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/MaransCrypto
-2025-05-03 15:45:17,690 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/MaransCrypto
-2025-05-03 15:45:18,695 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/MaransCrypto
-2025-05-03 15:45:20,556 INFO     twitter_scanner: fetch_profile_info: bio='One Airdrop🪂 Strategy Per Day🙇...', created=2020-12-14 02:03:00, tweets_count=14604
-2025-05-03 15:45:24,228 INFO     twitter_scanner: scan_twitter: go next cursor
-2025-05-03 15:45:24,229 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26&cursor=DAADDAABCgABGqCRK3YXcDIKAAIaoJDo4lqAEAAIAAIAAAACCAADAAAAAAgABAAAAAAKAAUaoJE07MAnEAoABhqgkTTsv9jwAAA
-2025-05-03 15:45:25,414 INFO     twitter_scanner: Status: 200, Length: 17105
-2025-05-03 15:45:25,505 INFO     twitter_scanner: 
-2025-05-03 15:45:25,506 ERROR    twitter_scanner: Error parsing item: list index out of range
-Traceback (most recent call last):
-  File "/home/mvv/EarlyCryptoWatcherBot/twitter_scanner.py", line 248, in scan_twitter
-    cleaned = tw["tweet_date"].split('·')[0].strip() + ' ' + tw["tweet_date"].split('·')[1].replace('UTC', '').strip()
-                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
-IndexError: list index out of range
-2025-05-03 15:45:25,513 INFO     twitter_scanner: Apr 23, 2025 · 1:02 PM UTC
-2025-05-03 15:45:25,518 INFO     twitter_scanner: May 3, 2025 · 3:42 PM UTC
-2025-05-03 15:45:30,524 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/jadesweeney3
-2025-05-03 15:45:31,695 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/jadesweeney3
-2025-05-03 15:45:32,699 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/jadesweeney3
-2025-05-03 15:45:34,346 INFO     twitter_scanner: fetch_profile_info: bio='...', created=2012-02-28 22:55:00, tweets_count=158
-2025-05-03 15:45:34,360 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
-2025-05-03 15:48:22,472 INFO     __main__: Инициализация TelegramClient...
-2025-05-03 15:48:22,841 INFO     __main__: Успешный вход под @bot_early_crypto_watcher_bot (id=8149732599)
-2025-05-03 15:48:22,843 INFO     __main__: Запускаем EarlyCryptoWatcherBot (Telethon)
-2025-05-03 15:48:22,843 INFO     __main__: EarlyCryptoWatcherBot (Telethon) слушает команды ...
-2025-05-03 15:48:29,865 INFO     __main__: Получена команда /scan от 469165312
-2025-05-03 15:48:29,921 INFO     twitter_scanner: Проверка доступных зеркал Nitter...
-2025-05-03 15:48:29,193 INFO     twitter_scanner: Рабочее зеркало: https://nitter.privacydev.net
-2025-05-03 15:48:30,608 INFO     twitter_scanner: Рабочее зеркало: https://nitter.aishiteiru.moe
-2025-05-03 15:48:32,972 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.pussthecat.org: HTTPSConnectionPool(host='nitter.pussthecat.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9bf9c62750>: Failed to resolve 'nitter.pussthecat.org' ([Errno -2] Name or service not known)"))
-2025-05-03 15:48:33,935 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.moomoo.me: HTTPSConnectionPool(host='nitter.moomoo.me', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:48:35,230 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.privacy.com.de: HTTPSConnectionPool(host='nitter.privacy.com.de', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1016)')))
-2025-05-03 15:48:35,268 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.fdn.fr: HTTPSConnectionPool(host='nitter.fdn.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9bf9c6d4d0>: Failed to resolve 'nitter.fdn.fr' ([Errno -2] Name or service not known)"))
-2025-05-03 15:48:35,307 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.1d4.us: HTTPSConnectionPool(host='nitter.1d4.us', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9bf9c7cd90>: Failed to resolve 'nitter.1d4.us' ([Errno -5] No address associated with hostname)"))
-2025-05-03 15:48:36,103 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.10qt.net: HTTPSConnectionPool(host='nitter.10qt.net', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:48:37,008 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.ahwx.org: HTTPSConnectionPool(host='nitter.ahwx.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nitter.ahwx.org'. (_ssl.c:1016)")))
-2025-05-03 15:48:39,925 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.asmallr.tech: HTTPSConnectionPool(host='nitter.asmallr.tech', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9bf9c7f650>: Failed to resolve 'nitter.asmallr.tech' ([Errno -2] Name or service not known)"))
-2025-05-03 15:48:42,207 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.bierlefeld.com: HTTPSConnectionPool(host='nitter.bierlefeld.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)')))
-2025-05-03 15:48:43,135 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.blahaj.land: HTTPSConnectionPool(host='nitter.blahaj.land', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:48:43,745 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.buntcomm.com: HTTPSConnectionPool(host='nitter.buntcomm.com', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)')))
-2025-05-03 15:48:44,413 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.colibriste.org: HTTPSConnectionPool(host='nitter.colibriste.org', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1016)')))
-2025-05-03 15:48:49,512 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.crabf.art: HTTPSConnectionPool(host='nitter.crabf.art', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f9bf9c87210>, 'Connection to nitter.crabf.art timed out. (connect timeout=5)'))
-2025-05-03 15:48:55,576 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.gl-pillet.fr: HTTPSConnectionPool(host='nitter.gl-pillet.fr', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9bf9c84450>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-2025-05-03 15:48:58,198 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.mint.lgbt: HTTPSConnectionPool(host='nitter.mint.lgbt', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9bf9c7d590>: Failed to resolve 'nitter.mint.lgbt' ([Errno -2] Name or service not known)"))
-2025-05-03 15:48:59,266 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.my.id: HTTPSConnectionPool(host='nitter.my.id', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9bf9c6e750>: Failed to resolve 'nitter.my.id' ([Errno -2] Name or service not known)"))
-2025-05-03 15:48:59,331 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.onion.love: HTTPSConnectionPool(host='nitter.onion.love', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9bf9c95b90>: Failed to resolve 'nitter.onion.love' ([Errno -2] Name or service not known)"))
-2025-05-03 15:48:59,389 WARNING  twitter_scanner: Ошибка при проверке зеркала https://nitter.plutonic.tk: HTTPSConnectionPool(host='nitter.plutonic.tk', port=443): Max retries exceeded with url: /search?f=tweets&q=crypto (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f9bf9c7d4d0>: Failed to resolve 'nitter.plutonic.tk' ([Errno -2] Name or service not known)"))
-2025-05-03 15:49:01,635 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.privacydev.net
-2025-05-03 15:49:01,636 INFO     twitter_scanner: Fetching: https://nitter.privacydev.net/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 15:49:02,409 INFO     twitter_scanner: Status: 429, Length: 577
-2025-05-03 15:49:02,410 WARNING  twitter_scanner: Rate limited, skipping mirror
-2025-05-03 15:49:02,410 INFO     twitter_scanner: scan_twitter: Trying mirror: https://nitter.aishiteiru.moe
-2025-05-03 15:49:02,411 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26
-2025-05-03 15:49:03,641 INFO     twitter_scanner: Status: 200, Length: 21630
-2025-05-03 15:49:03,773 INFO     twitter_scanner: tweet_date: May 3, 2025 · 3:48 PM UTC
-2025-05-03 15:49:08,782 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/AnujSha113
-2025-05-03 15:49:09,465 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/AnujSha113
-2025-05-03 15:49:10,467 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/AnujSha113
-2025-05-03 15:49:12,136 INFO     twitter_scanner: fetch_profile_info: bio='Raptors, Leafs and Jays all da...', created=2022-02-12 01:30:00, tweets_count=42200
-2025-05-03 15:49:12,151 INFO     twitter_scanner: tweet_date: May 3, 2025 · 3:47 PM UTC
-2025-05-03 15:49:12,164 INFO     twitter_scanner: tweet_date: May 3, 2025 · 3:47 PM UTC
-2025-05-03 15:49:17,173 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/Quad_Risky
-2025-05-03 15:49:18,097 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/Quad_Risky
-2025-05-03 15:49:19,100 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/Quad_Risky
-2025-05-03 15:49:21,031 INFO     twitter_scanner: fetch_profile_info: bio='Web3 Gamer||Alpha airdrop hunt...', created=2024-11-25 19:24:00, tweets_count=385
-2025-05-03 15:49:21,037 INFO     twitter_scanner: tweet_date: May 3, 2025 · 8:36 AM UTC
-2025-05-03 15:49:26,041 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/BlackCardCoin
-2025-05-03 15:49:26,905 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/BlackCardCoin
-2025-05-03 15:49:27,906 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/BlackCardCoin
-2025-05-03 15:49:29,506 INFO     twitter_scanner: fetch_profile_info: bio='Discover a world of no fees, h...', created=2024-03-25 16:31:00, tweets_count=489
-2025-05-03 15:50:42,281 INFO     twitter_scanner: scan_twitter: go next cursor
-2025-05-03 15:50:43,188 INFO     twitter_scanner: Fetching: https://nitter.aishiteiru.moe/search?f=tweets&q=%27a16z%27%20OR%20%27binance%20labs%27%20OR%20%27paradigm%27%20OR%20%27testnet%27%20OR%20%27zk%27%20OR%20%27l2%27%20OR%20%27galxe%27%20OR%20%27zealy%27%20OR%20%27points%27%20OR%20%27farm%27%20OR%20%27airdrop%27%20since%3A2025-04-26&cursor=DAADDAABCgABGqCSP_uWcfsKAAIaoJH5eRaghgAIAAIAAAACCAADAAAAAAgABAAAAAAKAAUaoJJMl4AnEAoABhqgkkyXf9jwAAA
-2025-05-03 15:50:50,455 INFO     twitter_scanner: Status: 200, Length: 18770
-2025-05-03 15:50:50,556 INFO     twitter_scanner: tweet_date: 
-2025-05-03 15:50:50,556 ERROR    twitter_scanner: Error parsing item: list index out of range
-Traceback (most recent call last):
-  File "/home/mvv/EarlyCryptoWatcherBot/twitter_scanner.py", line 248, in scan_twitter
-    cleaned = tw["tweet_date"].split('·')[0].strip() + ' ' + tw["tweet_date"].split('·')[1].replace('UTC', '').strip()
-                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
-IndexError: list index out of range
-2025-05-03 15:50:50,560 INFO     twitter_scanner: tweet_date: Apr 23, 2025 · 1:02 PM UTC
-2025-05-03 15:50:50,562 INFO     twitter_scanner: tweet_date: May 3, 2025 · 3:47 PM UTC
-2025-05-03 15:50:55,568 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/AlexandrKl75671
-2025-05-03 15:50:56,564 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/AlexandrKl75671
-2025-05-03 15:50:57,574 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/AlexandrKl75671
-2025-05-03 15:50:59,359 INFO     twitter_scanner: fetch_profile_info: bio='...', created=2024-05-24 09:56:00, tweets_count=170
-2025-05-03 15:50:59,364 INFO     twitter_scanner: tweet_date: May 3, 2025 · 3:47 PM UTC
-2025-05-03 15:51:02,956 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.privacydev.net/EmmanuelSSCB
-2025-05-03 15:51:03,913 WARNING  twitter_scanner: fetch_profile_info: Error on https://nitter.privacydev.net: 429 Client Error: Too Many Requests for url: https://nitter.privacydev.net/EmmanuelSSCB
-2025-05-03 15:51:04,915 INFO     twitter_scanner: fetch_profile_info: Trying https://nitter.aishiteiru.moe/EmmanuelSSCB
-2025-05-03 15:51:07,081 INFO     twitter_scanner: fetch_profile_info: bio='Solitude. gnoma (🧙,🧙)....', created=2024-01-01 22:35:00, tweets_count=21238
-2025-05-03 15:51:20,790 INFO     twitter_scanner: scan_twitter: Returning 0 parsed tweets
+  File "/home/mvv/EarlyCryptoWatcherBot/twitter_scanner.py", line 328, in command_scan
+    await broadcast_to_subscribers('❌ Перспективные новые проекты не найдены.')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: broadcast_to_subscribers() missing 1 required positional argument: 'message'

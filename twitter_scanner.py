@@ -7,6 +7,9 @@ from datetime import datetime, timedelta
 from logger_config import setup_logger
 from utils import parse_stat_number,dicts_equal
 from mongo import save_user_fault,get_fault_user,get_settings,remove_all_fault_users,save_settings
+from scoring        import score_account
+from mongo import save_user_good
+from telethon import TelegramClient
 
 # Ensure requests uses certifi's CA bundle for SSL verification
 os.environ['REQUESTS_CA_BUNDLE'] = certifi.where()
@@ -88,6 +91,7 @@ FILTER_AGE_TWEET_DAYS_MAX = int(os.getenv('FILTER_AGE_TWEET_DAYS_MAX'))
 PAUSE_BETWEEN_MESSAGES = int(os.getenv('PAUSE_BETWEEN_MESSAGES'))
 FILTER_AGE_TWEET_DAYS_MAX = int(os.getenv('FILTER_AGE_TWEET_DAYS_MAX'))
 PAUSE_BETWEEN_PAGES = int(os.getenv('PAUSE_BETWEEN_PAGES'))
+SCORE_MIN = int(os.getenv('SCORE_MIN', 0))
 
 current_settings = {
     "FILTER_FUNDS": FILTER_FUNDS,
@@ -228,6 +232,7 @@ def scan_twitter(limit: int = 100) -> list[dict]:
                 logger.warning(f"Error fetching: {e}")
                 break
 
+            logger.info(f"Success: {search_url}")
             items = soup.select('div.timeline div.timeline-item')
             if not items:
                 logger.info("No more items")
@@ -240,6 +245,10 @@ def scan_twitter(limit: int = 100) -> list[dict]:
                     tw = {}
                     user_el = item.select_one('a.username')
                     tw["username"] = user_el.text.lstrip('@') if user_el else ''
+                    if not tw["username"]:
+                        logger.info(f"username: {tw['username']} - continue")
+                        continue
+                    
                     profile_path = user_el['href'] if user_el and user_el.has_attr('href') else ''
                     date_el = item.select_one('span.tweet-date a')
                     tw["tweet_date"] = date_el['title'] if date_el and date_el.has_attr('title') else ''
@@ -249,11 +258,13 @@ def scan_twitter(limit: int = 100) -> list[dict]:
                     tweet_datetime = datetime.strptime(cleaned, '%b %d, %Y %I:%M %p')
                     age_tweet_days = (datetime.now() - tweet_datetime).days
                     if age_tweet_days > FILTER_AGE_TWEET_DAYS_MAX:
+                        logger.info(f"age_tweet_days > FILTER_AGE_TWEET_DAYS_MAX - continue")
                         continue
                     tw["age_tweet_days"] = age_tweet_days
 
                     user_fault = get_fault_user(tw["username"])
                     if user_fault:
+                        logger.info(f"fault user in BD: {user_fault}")
                         continue
 
                     time.sleep(PAUSE_BETWEEN_MESSAGES)
@@ -273,12 +284,15 @@ def scan_twitter(limit: int = 100) -> list[dict]:
 
                     if (datetime.now() - tw["created"]).days > FILTER_ACCOUNT_AGE_MAX_DAYS:
                         save_user_fault(tw["username"], profile_info)
+                        logger.info(f"> FILTER_ACCOUNT_AGE_MAX_DAYS - continue")
                         continue
                     if tw["tweets_count"] > FILTER_TWEETS_MAX:
                         save_user_fault(tw["username"], profile_info)
+                        logger.info(f"> FILTER_TWEETS_MAX - continue")
                         continue
                     if tw["followers_count"] > FILTER_FOLLOWERS_MAX:
                         save_user_fault(tw["username"], profile_info)
+                        logger.info(f"> FILTER_FOLLOWERS_MAX - continue")
                         continue
 
                     fullname_el = item.select_one('a.fullname')
@@ -302,9 +316,52 @@ def scan_twitter(limit: int = 100) -> list[dict]:
             cursor = load_more['href'].split('cursor=')[-1]
             time.sleep(PAUSE_BETWEEN_PAGES)
 
-            if total_fetched:
-                break
-
     logger.info(f"scan_twitter: Returning {len(results)} parsed tweets")
     return results
 
+async def command_scan(client: TelegramClient):
+    from bot import broadcast_to_subscribers 
+    await broadcast_to_subscribers(client, '🔍 Запускаю сканирование Twitter…')
+    try:
+        tws = scan_twitter()
+        if len(tws) == 0:
+            await broadcast_to_subscribers(client, '❌ Перспективные новые проекты не найдены.')
+            return
+        
+        logger.info('scan_twitter вернул %d записей', len(tws))
+        await broadcast_to_subscribers(client, f'scan_twitter вернул {len(tws)} записей')
+
+        good = []
+        for tw in tws:
+            tw = score_account(tw)
+            logger.info(f"Оценка @{tw['username']}: {tw['score']}")
+            if tw['score'] >= SCORE_MIN:
+                good.append(tw)
+                save_user_good(tw["username"], tw)
+
+        logger.info('После скоринга осталось %d перспективных аккаунтов', len(good))
+        await broadcast_to_subscribers(client, f'После скоринга осталось {len(good)} перспективных аккаунтов')
+
+        if not good:
+            await broadcast_to_subscribers(client, '❌ Перспективные новые проекты не найдены.')
+            return
+
+        parts = []
+        for tw in good:
+            text = (
+                f"Проект: @{tw['username']} (создан {tw['created'].strftime('%d.%m.%Y %H:%M')})\n"
+                f"Рейтинг: {tw['score']}/10\n"
+                f"Bio: {tw['bio']}\n"
+                f"Твитов: {tw['tweets_count']} | Подписчиков: {tw['followers_count']}\n"
+                f"{'Ссылки: ' + ', '.join(tw['urls']) if len(tw.get('urls',[]))>0 else ''}\n\n"
+            )
+            parts.append(text)
+        message = '\n\n'.join(parts)[:4000]
+
+        await broadcast_to_subscribers(client, message)
+        
+        logger.info('Отправлено сообщение с %d аккаунтами', len(good))
+
+    except Exception as e:
+        logger.exception('Ошибка при /scan:')
+        await broadcast_to_subscribers(client, '⚠️ Произошла ошибка при сканировании.')
