@@ -5,7 +5,7 @@ from telethon import TelegramClient, events
 from datetime import datetime
 from twitter_scanner import scan_twitter
 from scoring        import score_account
-from mongo import save_subscriber, get_all_subscribers
+from mongo import save_subscriber, get_all_subscribers, save_user_good
 import asyncio
 
 load_dotenv()
@@ -52,6 +52,10 @@ async def handler_scan(event):
     await event.reply('🔍 Запускаю сканирование Twitter…')
     try:
         tws = scan_twitter()
+        if len(tws) == 0:
+            await event.reply('❌ Перспективные новые проекты не найдены.')
+            return
+        
         logger.info('scan_twitter вернул %d записей', len(tws))
         await event.reply(f'scan_twitter вернул {len(tws)} записей')
 
@@ -61,6 +65,7 @@ async def handler_scan(event):
             logger.info(f"Оценка @{tw['username']}: {tw['score']}")
             if tw['score'] >= SCORE_MIN:
                 good.append(tw)
+                save_user_good(tw["username"], tw)
 
         logger.info('После скоринга осталось %d перспективных аккаунтов', len(good))
         await event.reply(f'После скоринга осталось {len(good)} перспективных аккаунтов')

@@ -13,8 +13,10 @@ db = client["twitter"]
 coll_fault_usernames = db["fault_usernames"]
 coll_subscribes = db["subscribes"]
 coll_settings = db["settings"]
+coll_good_users = db["coll_good_users"]
 
 coll_fault_usernames.create_index("username", unique=True)
+coll_good_users.create_index("username", unique=True)
 coll_subscribes.create_index("telegram_id", unique=True)
 
 def save_user_fault(username: str, info: dict):
@@ -46,6 +48,39 @@ def remove_all_fault_users() -> int:
     """
     try:
         result = coll_fault_usernames.delete_many({})
+        return result.deleted_count
+    except PyMongoError as e:
+        return 0
+    
+def save_user_good(username: str, info: dict):
+    """
+    Сохраняет или обновляет документ по ключу username.
+    Если документа не было — вставит новый, иначе обновит поля.
+    """
+    # Мы используем поле username как уникальный идентификатор
+    coll_good_users.update_one(
+        {"username": username},           # фильтр поиска
+        {"$set": info},                   # что обновляем / вставляем
+        upsert=True                       # создать, если не найдено
+    )
+    
+def get_good_user(username: str) -> dict | None:
+    """
+    Возвращает словарь с данными пользователя или None, если не найден.
+    """
+    doc = coll_good_users.find_one(
+        {"username": username},   # ищем по полю username
+        {"_id": 0}                # не возвращать служебное поле _id
+    )
+    return doc
+
+def remove_all_good_users() -> int:
+    """
+    Удаляет все документы из указанной коллекции.
+    Возвращает количество удалённых документов.
+    """
+    try:
+        result = coll_good_users.delete_many({})
         return result.deleted_count
     except PyMongoError as e:
         return 0

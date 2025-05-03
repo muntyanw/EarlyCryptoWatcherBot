@@ -276,6 +276,9 @@ def scan_twitter(limit: int = 100) -> list[dict]:
             else:
                 profile_info = usernames[tw["username"]]
                 
+            if len(profile_info) == 0:
+                logger.debug(f"user: {tw['username']}, not found in nitter, all mirrors failed")
+                continue
                 
             tw["bio"] = profile_info.get('bio', '')
             tw["created"] = profile_info.get('created', None)
