@@ -87,6 +87,7 @@ FILTER_FOLLOWERS_MAX = int(os.getenv('FILTER_FOLLOWERS_MAX'))
 FILTER_AGE_TWEET_DAYS_MAX = int(os.getenv('FILTER_AGE_TWEET_DAYS_MAX'))
 PAUSE_BETWEEN_MESSAGES = int(os.getenv('PAUSE_BETWEEN_MESSAGES'))
 FILTER_AGE_TWEET_DAYS_MAX = int(os.getenv('FILTER_AGE_TWEET_DAYS_MAX'))
+PAUSE_BETWEEN_PAGES = int(os.getenv('PAUSE_BETWEEN_PAGES'))
 
 current_settings = {
     "FILTER_FUNDS": FILTER_FUNDS,
@@ -178,14 +179,6 @@ def fetch_profile_info(username, mirrors):
     return {}
 
 def scan_twitter(limit: int = 100) -> list[dict]:
-    """
-    Scrape recent crypto-related tweets from Nitter via HTML parsing,
-    rotating through mirrors to handle rate limits.
-
-    :param days: Number of days back to include tweets.
-    :param limit: Maximum number of tweet results to process.
-    :return: List of dicts with keys: username, tweet, date, profile_url.
-    """
     mirrors = get_working_mirrors()
     if not mirrors:
         return []
@@ -194,130 +187,124 @@ def scan_twitter(limit: int = 100) -> list[dict]:
     filter_founds_to_query = ' OR '.join([f"'{f}'" for f in FILTER_FUNDS])
     filter_keywords_to_query = ' OR '.join([f"'{f}'" for f in FILTER_KEYWORDS])
     famous_investors_to_query = ' OR '.join([f"'{f}'" for f in SCORE_FAMOUS_INVESTORS])
-    
-    query = ""
+
+    query = ''
     if len(filter_founds_to_query):
         query += f"{filter_founds_to_query}"
-        
     if len(filter_keywords_to_query):
         query += f" OR {filter_keywords_to_query}"
-        
-    if len(famous_investors_to_query.replace("''", "")):
+    if len(famous_investors_to_query.replace("''", '')):
         query += f" OR {famous_investors_to_query}"
-        
     query += f" since:{since_date}"
-    
+
     encoded = requests.utils.quote(query)
+    results, usernames = [], {}
+    total_fetched, cursor = 0, None
 
-    soup = None
-    base = None
     for base in mirrors:
-        search_url = f"{base}/search?f=tweets&q={encoded}"
-        logger.info(f"scan_twitter: Trying mirror: {search_url}")
-        try:
-            resp = requests.get(
-                search_url,
-                headers=headers,
-                timeout=10,
-                verify=certifi.where()
-            )
-            logger.info(f"scan_twitter: Status code: {resp.status_code}")
-            logger.info(f"scan_twitter: Headers: {resp.headers}")
-            logger.info(f"scan_twitter: Text length: {len(resp.text)}")
-            if resp.status_code == 429:
-                logger.warning(f"429 Too Many Requests on {base}, skipping")
-                continue
-            resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, 'html.parser')
-            logger.info(f"scan_twitter: Successfully fetched from {base}")
-            break
-        except Exception as e:
-            logger.warning(f"Error fetching from {base}: {e}")
-            time.sleep(1)
-            continue
+        base = base.rstrip('/')
+        logger.info(f"scan_twitter: Trying mirror: {base}")
+        while total_fetched < limit:
+            search_url = f"{base}/search?f=tweets&q={encoded}"
+            if cursor:
+                search_url += f"&cursor={cursor}"
+                logger.info(f"scan_twitter: go next cursor")
 
-    if soup is None:
-        logger.error("scan_twitter: Все зеркала недоступны или ограничены")
-        return []
+            logger.info(f"Fetching: {search_url}")
+            try:
+                resp = requests.get(
+                    search_url,
+                    headers=headers,
+                    timeout=10,
+                    verify=certifi.where()
+                )
+                logger.info(f"Status: {resp.status_code}, Length: {len(resp.text)}")
+                if resp.status_code == 429:
+                    logger.warning("Rate limited, skipping mirror")
+                    break
+                resp.raise_for_status()
+                soup = BeautifulSoup(resp.text, 'html.parser')
+            except Exception as e:
+                logger.warning(f"Error fetching: {e}")
+                break
 
-    items = soup.select('div.timeline div.timeline-item')[:limit]
-    logger.info(f"scan_twitter: Found {len(items)} items, processing up to {limit}")
+            items = soup.select('div.timeline div.timeline-item')
+            if not items:
+                logger.info("No more items")
+                break
 
-    results = []
-    usernames = {}
-    for idx, item in enumerate(items, start=1):
-        try:
-            tw = {}
-            
-            user_el = item.select_one('a.username')
-            tw["username"] = user_el.text.lstrip('@') if user_el else ''
-            profile_path = user_el['href'] if user_el and user_el.has_attr('href') else ''
-            
-            date_el = item.select_one('span.tweet-date a')
-            tw["tweet_date"] = date_el['title'] if date_el and date_el.has_attr('title') else ''
-            
-            cleaned = tw["tweet_date"].split('·')[0].strip() + ' ' + tw["tweet_date"].split('·')[1].replace('UTC', '').strip()
-            tweet_datetime = datetime.strptime(cleaned, '%b %d, %Y %I:%M %p')
-            age_tweet_days = (datetime.now() - tweet_datetime).days
-            if age_tweet_days > FILTER_AGE_TWEET_DAYS_MAX:
-                logger.debug(f"age tweet days: {age_tweet_days}, FILTER_AGE_TWEET_DAYS_MAX: {FILTER_AGE_TWEET_DAYS_MAX} - account rejected")
-                continue
-            tw["age_tweet_days"] = age_tweet_days
-            
-            user_fault = get_fault_user(tw["username"])
-            if user_fault:
-                logger.debug(f"user {tw['username'] } - user fault in BD")
-                continue
-            
-            time.sleep(PAUSE_BETWEEN_MESSAGES)
-            if not usernames.get(tw["username"]):
-                profile_info = fetch_profile_info(tw["username"], mirrors)
-                usernames[tw["username"]] = profile_info
-            else:
-                profile_info = usernames[tw["username"]]
+            for idx, item in enumerate(items, start=1):
+                if total_fetched >= limit:
+                    break
+                try:
+                    tw = {}
+                    user_el = item.select_one('a.username')
+                    tw["username"] = user_el.text.lstrip('@') if user_el else ''
+                    profile_path = user_el['href'] if user_el and user_el.has_attr('href') else ''
+                    date_el = item.select_one('span.tweet-date a')
+                    tw["tweet_date"] = date_el['title'] if date_el and date_el.has_attr('title') else ''
+
+                    logger.info(f"tweet_date: {tw['tweet_date']}")
+                    cleaned = tw["tweet_date"].split('·')[0].strip() + ' ' + tw["tweet_date"].split('·')[1].replace('UTC', '').strip()
+                    tweet_datetime = datetime.strptime(cleaned, '%b %d, %Y %I:%M %p')
+                    age_tweet_days = (datetime.now() - tweet_datetime).days
+                    if age_tweet_days > FILTER_AGE_TWEET_DAYS_MAX:
+                        continue
+                    tw["age_tweet_days"] = age_tweet_days
+
+                    user_fault = get_fault_user(tw["username"])
+                    if user_fault:
+                        continue
+
+                    time.sleep(PAUSE_BETWEEN_MESSAGES)
+                    if not usernames.get(tw["username"]):
+                        profile_info = fetch_profile_info(tw["username"], mirrors)
+                        usernames[tw["username"]] = profile_info
+                    else:
+                        profile_info = usernames[tw["username"]]
+
+                    if not profile_info:
+                        continue
+
+                    tw["bio"] = profile_info.get('bio', '')
+                    tw["created"] = profile_info.get('created')
+                    tw["tweets_count"] = profile_info.get('tweets_count', 0)
+                    tw["followers_count"] = profile_info.get('followers_count', 0)
+
+                    if (datetime.now() - tw["created"]).days > FILTER_ACCOUNT_AGE_MAX_DAYS:
+                        save_user_fault(tw["username"], profile_info)
+                        continue
+                    if tw["tweets_count"] > FILTER_TWEETS_MAX:
+                        save_user_fault(tw["username"], profile_info)
+                        continue
+                    if tw["followers_count"] > FILTER_FOLLOWERS_MAX:
+                        save_user_fault(tw["username"], profile_info)
+                        continue
+
+                    fullname_el = item.select_one('a.fullname')
+                    tw["fullname"] = fullname_el.get_text(strip=True) if fullname_el else ''
+
+                    content_el = item.select_one('div.tweet-content')
+                    tw["tweet_text"] = content_el.get_text(' ', strip=True) if content_el else ''
+
+                    tw["profile_url"] = f"{base}{profile_path}"
+                    tw["score"] = 0
+
+                    results.append(tw)
+                    total_fetched += 1
+                except Exception as e:
+                    logger.exception(f"Error parsing item: {e}")
+
+            load_more = soup.select_one("div.show-more a")
+            if not load_more or 'cursor=' not in load_more.get('href', ''):
+                break
                 
-            if len(profile_info) == 0:
-                logger.debug(f"user: {tw['username']}, not found in nitter, all mirrors failed")
-                continue
-                
-            tw["bio"] = profile_info.get('bio', '')
-            tw["created"] = profile_info.get('created', None)
-            tw["tweets_count"] = profile_info.get('tweets_count', 0)
-            tw["followers_count"] = profile_info.get('followers_count', 0)
-            
-            age_days = (datetime.now() - tw["created"]).days
-            if age_days > FILTER_ACCOUNT_AGE_MAX_DAYS:
-                logger.debug(f"account age days: {age_days}, FILTER_ACCOUNT_AGE_MAX_DAYS: {FILTER_ACCOUNT_AGE_MAX_DAYS} - account rejected")
-                save_user_fault(tw["username"], profile_info)
-                continue
-                
-            if tw["tweets_count"] > FILTER_TWEETS_MAX:
-                logger.debug(f"tweets count: {tw['tweets_count']}, FILTER_TWEETS_MAX: {FILTER_TWEETS_MAX} - account rejected")
-                save_user_fault(tw["username"], profile_info)
-                continue
-                
-            if tw["followers_count"] > FILTER_FOLLOWERS_MAX:
-                logger.debug(f"tweets count: {tw['followers_count']}, FILTER_FOLLOWERS_MAX: {FILTER_FOLLOWERS_MAX} - account rejected")
-                save_user_fault(tw["username"], profile_info)
-                continue
-            
-            fullname_el = item.select_one('a.fullname')
-            tw["fullname"] = fullname_el.get_text(strip=True) if fullname_el else ''
+            cursor = load_more['href'].split('cursor=')[-1]
+            time.sleep(PAUSE_BETWEEN_PAGES)
 
-            content_el = item.select_one('div.tweet-content')
-            tw["tweet_text"] = content_el.get_text(' ', strip=True) if content_el else ''
-            
-            tw["profile_url"] = f"{base}{profile_path}"
-            
-            tw["score"] = 0
-
-            logger.debug(f"Parsed item {idx}: @{tw['username']} at {tw['tweet_date']}")
-            
-            results.append(tw)
-            
-        except Exception as e:
-            error_text = str(e)
-            logger.exception(f"scan_twitter: Error parsing item #{idx} - {error_text}")
+            if total_fetched:
+                break
 
     logger.info(f"scan_twitter: Returning {len(results)} parsed tweets")
     return results
+
