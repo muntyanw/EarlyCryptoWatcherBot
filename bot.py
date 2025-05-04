@@ -5,6 +5,8 @@ from telethon import TelegramClient, events
 from twitter_scanner import command_scan
 from mongo import save_subscriber, get_all_subscribers
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from apscheduler.executors.asyncio import AsyncIOExecutor
+import pytz
 
 load_dotenv()
 
@@ -16,6 +18,7 @@ API_ID    = int(os.getenv('TELEGRAM_API_ID'))
 API_HASH  = os.getenv('TELEGRAM_API_HASH')
 SHEDULER_HOUR  = os.getenv('SHEDULER_HOUR')
 SHEDULER_MINUTE  = os.getenv('SHEDULER_MINUTE')
+TIMEZONE  = os.getenv('TIMEZONE')
 
 logger.info('Инициализация TelegramClient...')
 client = TelegramClient('ecwbot', API_ID, API_HASH)
@@ -81,9 +84,18 @@ def main():
     logger.info('Успешный вход под @%s (id=%s)', me.username, me.id)
     
     # здесь Telethon инициализирует client.loop
-    sched = AsyncIOScheduler(event_loop=client.loop)
-    sched.add_job(lambda: asyncio.create_task(command_scan()),
-                  'cron', hour=SHEDULER_HOUR, minute=SHEDULER_MINUTE)
+    sched = AsyncIOScheduler(
+        event_loop=client.loop,
+        timezone=pytz.timezone(TIMEZONE),
+        executors={'default': AsyncIOExecutor()}
+    )
+    sched.add_job(
+        command_scan,                     # async def command_scan(client)
+        'cron',
+        hour=SHEDULER_HOUR,
+        minute=SHEDULER_MINUTE,
+        kwargs={'client': client}
+    )
     sched.start()                                  # теперь найдёт client.loop и запустится
     logger.info(f'Scheduler запущен, будет выполняться ежедневно в {SHEDULER_HOUR}:{SHEDULER_MINUTE} UTC')
 

@@ -18,18 +18,27 @@ def score_account(tw):
         return
 
     SCORE_PLATFORMS = os.getenv('SCORE_PLATFORMS', '').lower().split(',')
-    if any(val in text_acc for val in SCORE_PLATFORMS):
+    if SCORE_PLATFORMS == ['']:
         tw["score"] += 2
+    else:
+        if any(val in text_acc for val in SCORE_PLATFORMS):
+            tw["score"] += 2
         
     SCORE_FAMOUS_INVESTORS = os.getenv('SCORE_FAMOUS_INVESTORS', '').lower().split(',')
-    if any(val in text_acc for val in SCORE_FAMOUS_INVESTORS):
+    if SCORE_FAMOUS_INVESTORS == ['']:
         tw["score"] += 3
+    else:
+        if any(val in text_acc for val in SCORE_FAMOUS_INVESTORS):
+            tw["score"] += 3
         
     FILTER_KEYWORDS = os.getenv('FILTER_KEYWORDS', '').lower().split(',')
     FILTER_FUNDS = os.getenv('FILTER_FUNDS', '').lower().split(',')
     key_words = FILTER_KEYWORDS + FILTER_FUNDS
     
-    if any(val in text_acc for val in key_words):
+    if key_words == ['']:
         tw["score"] += 3
+    else:
+        if any(val in text_acc for val in key_words):
+            tw["score"] += 3
 
     return tw

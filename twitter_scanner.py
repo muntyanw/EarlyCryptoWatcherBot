@@ -142,6 +142,7 @@ def fetch_profile_info(username, mirrors):
         url = f"{base}/{username.strip()}"
         logger.info(f"fetch_profile_info: Trying {url}")
         try:
+            accInfo = {}
             resp = requests.get(url, headers=headers, timeout=10, verify=False)
             resp.raise_for_status()
             soup = BeautifulSoup(resp.text, 'html.parser')
@@ -166,13 +167,15 @@ def fetch_profile_info(username, mirrors):
             followers_el = soup.select_one('li.following span.profile-stat-num')
             followers_count = parse_stat_number(followers_el.text) if followers_el else 0
 
-            logger.info(f"fetch_profile_info: bio='{bio[:30]}...', created={created}, tweets_count={tweets_count}")
-            return {
-                'bio': bio,
-                'created': created,
-                'tweets_count': tweets_count,
-                'followers_count': followers_count,
-            }
+            logger.info(f"fetch_profile_info: bio='{bio[:30]}...', created={created}, tweets_count={tweets_count}, followers_count={followers_count}")
+            
+            accInfo['bio'] = bio
+            accInfo['created'] = created
+            accInfo['tweets_count'] = tweets_count
+            accInfo['followers_count'] = followers_count
+            
+            return accInfo
+            
 
         except Exception as e:
             logger.warning(f"fetch_profile_info: Error on {base}: {e}")
