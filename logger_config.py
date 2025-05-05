@@ -1,38 +1,42 @@
-"""
-logger_config.py
-
-This module sets up a logger that logs to both console and file.
-
-Usage:
-    from logger_config import setup_logger
-    logger = setup_logger(__name__)
-"""
-import logging
 import os
-
-# Path to the log file (ecwbot.log in the project root)
-LOG_FILE = os.path.join(os.path.dirname(__file__), 'ecwbot.log')
-
+import logging
+from logging.handlers import RotatingFileHandler
+from pathlib import Path
 
 def setup_logger(name: str) -> logging.Logger:
-    """Create and return a logger configured with console and file handlers."""
+    log_level_str = os.getenv('LOG_LEVEL', 'INFO').upper()
+    numeric_level = getattr(logging, log_level_str, logging.INFO)
+
     logger = logging.getLogger(name)
-    if not logger.handlers:
-        logger.setLevel(logging.INFO)
-        formatter = logging.Formatter(
-            '%(asctime)s %(levelname)-8s %(name)s: %(message)s'
-        )
+    logger.setLevel(numeric_level)
+    if logger.hasHandlers():
+        logger.handlers.clear()
 
-        # Console handler
-        ch = logging.StreamHandler()
-        ch.setLevel(logging.INFO)
-        ch.setFormatter(formatter)
-        logger.addHandler(ch)
+    fmt = '%(asctime)s %(levelname)-8s [%(name)s] %(message)s'
+    formatter = logging.Formatter(fmt)
 
-        # File handler
-        fh = logging.FileHandler(LOG_FILE, encoding='utf-8')
-        fh.setLevel(logging.INFO)
-        fh.setFormatter(formatter)
-        logger.addHandler(fh)
+    # Консоль
+    console = logging.StreamHandler()
+    console.setLevel(numeric_level)
+    console.setFormatter(formatter)
+    logger.addHandler(console)
+
+    # Файловый с ротацией
+    raw_path = os.getenv('LOG_FILE', 'app.log')
+    base_dir = Path(__file__).resolve().parent
+    log_path = (Path(raw_path) if Path(raw_path).is_absolute()
+                else base_dir / raw_path)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    file_handler = RotatingFileHandler(
+        filename=str(log_path),
+        maxBytes=10 * 1024 * 1024,
+        backupCount=5,
+        encoding='utf-8'
+    )
+    
+    file_handler.setLevel(numeric_level)
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
 
     return logger

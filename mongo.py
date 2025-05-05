@@ -1,6 +1,9 @@
 from pymongo import MongoClient
 import os
 from pymongo.errors import PyMongoError
+from logger_config import setup_logger
+
+logger = setup_logger(__name__)
 
 MONGO_URI = os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
 # 1) Подключаемся (без аутентификации)
@@ -50,6 +53,7 @@ def remove_all_fault_users() -> int:
         result = coll_fault_usernames.delete_many({})
         return result.deleted_count
     except PyMongoError as e:
+        logger.warning(f"remove_all_fault_users: {e}")
         return 0
     
 def save_user_good(username: str, info: dict):
@@ -83,6 +87,7 @@ def remove_all_good_users() -> int:
         result = coll_good_users.delete_many({})
         return result.deleted_count
     except PyMongoError as e:
+        logger.warning(f"Ошибка remove_all_good_users: {e}")
         return 0
 
 def save_subscriber(telegram_id: int, info: dict) -> bool:
@@ -99,7 +104,7 @@ def save_subscriber(telegram_id: int, info: dict) -> bool:
         )
         return True
     except PyMongoError as e:
-        # здесь можно логировать e
+        logger.warning(f"save_subscriber {telegram_id}: {e}")
         return False
 
 def get_subscriber(telegram_id: int) -> dict | None:

@@ -3,7 +3,7 @@ import asyncio
 from dotenv import load_dotenv
 from telethon import TelegramClient, events
 from twitter_scanner import command_scan
-from mongo import save_subscriber, get_all_subscribers
+from mongo import save_subscriber, get_all_subscribers, delete_subscriber
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.executors.asyncio import AsyncIOExecutor
 import pytz
@@ -35,6 +35,14 @@ async def handler_subscribe(event):
     logger.info('Получена команда /subscribe от %s', sender_id)
     save_subscriber(sender_id,{})
     await event.reply('✅ Вы подписаны на обновления.')
+    
+@client.on(events.NewMessage(pattern='/unsubscribe'))
+async def handler_subscribe(event):
+    sender_id = event.sender_id
+    logger.info('Получена команда /unsubscribe от %s', sender_id)
+    delete_subscriber(sender_id,{})
+    await event.reply('✅ Вы отписаны на обновления.')
+
 
 
 @client.on(events.NewMessage(pattern='/scan'))
