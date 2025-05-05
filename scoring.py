@@ -15,7 +15,6 @@ def score_account(tw):
     if len(urls) > 0:
         tw["urls"] = urls
         tw["score"] += 2
-        return
 
     SCORE_PLATFORMS = os.getenv('SCORE_PLATFORMS', '').lower().split(',')
     if SCORE_PLATFORMS == ['']:
